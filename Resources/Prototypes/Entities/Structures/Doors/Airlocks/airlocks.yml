@@ -169,6 +169,8 @@
     sprite: Structures/Doors/Airlocks/Standard/xenoborg.rsi
   - type: Paintable
     group: null
+  - type: Airlock
+    openUnlitVisible: false # Erida
 
 - type: entity
   parent: Airlock

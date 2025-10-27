@@ -145,3 +145,4 @@ tiles-white-marble = white marble tile
 tiles-dark-marble = dark marble tile
 tiles-plasma-marble = plasmarble tile
 tiles-uranium-marble = uranium marble tile
+tiles-xenoborg-floor = покрытие ксеноборгов
