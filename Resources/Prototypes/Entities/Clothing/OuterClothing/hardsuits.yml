@@ -259,6 +259,8 @@
     - CorgiWearable
     - Hardsuit
     - WhitelistChameleon
+  - type: StaminaResistance # Erida
+    damageCoefficient: 0.4
 
 #Brigmedic Hardsuit
 - type: entity
@@ -288,6 +290,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBrigmedic
+  - type: StaminaResistance # Erida
+    damageCoefficient: 0.4
 
 #Warden's Hardsuit
 - type: entity
@@ -319,6 +323,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWarden
+  - type: StaminaResistance # Erida
+    damageCoefficient: 0.35
 
 #Captain's Hardsuit
 - type: entity
@@ -356,6 +362,8 @@
     - CorgiWearable
     - Hardsuit
     - WhitelistChameleon
+  - type: StaminaResistance # Erida
+    damageCoefficient: 0.4
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -505,6 +513,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurityRed
+  - type: StaminaResistance # Erida
+    damageCoefficient: 0.35
 
 #Luxury Mining Hardsuit
 - type: entity
@@ -559,7 +569,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.70
+    damageCoefficient: 0.4
   - type: Armor
     modifiers:
       coefficients:
@@ -625,7 +635,7 @@
   - type: FireProtection
     reduction: 0.8
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.6
+    damageCoefficient: 0.15 # Erida
   - type: Armor
     modifiers:
       coefficients:
@@ -666,7 +676,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.6
+    damageCoefficient: 0.2
   - type: Armor
     modifiers:
       coefficients:
@@ -765,6 +775,8 @@
     - CorgiWearable
     - Hardsuit
     - WhitelistChameleon
+  - type: StaminaResistance # Erida
+    damageCoefficient: 0.4
 
 #Ling Space Suit
 - type: entity
@@ -978,7 +990,7 @@
   - type: FireProtection
     reduction: 0.8
   - type: StaminaResistance
-    damageCoefficient: 0.15 # Needs 21 hits with a disabler to stun :godo:
+    damageCoefficient: 0.05 # Erida
   - type: Armor
     modifiers:
       coefficients:
@@ -1033,6 +1045,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetCBURN
+  - type: StaminaResistance # Erida
+    damageCoefficient: 0.15
 
 #MISC. HARDSUITS
 #Clown Hardsuit

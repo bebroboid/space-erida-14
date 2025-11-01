@@ -13,6 +13,8 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
+  - type: StaminaResistance # Erida
+    damageCoefficient: 0.4
 
 - type: entity
   parent: ClothingOuterHardsuitSecurity
