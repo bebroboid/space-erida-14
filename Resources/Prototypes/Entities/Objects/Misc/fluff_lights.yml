@@ -95,8 +95,6 @@
       - state: light
   - type: Item
     sprite: _Erida/Holidays/halloween/light/floor_light.rsi
-    layers:
-      - state: light
   - type: HolidayVisuals
     holidays:
       festive:
