@@ -22,6 +22,17 @@
 
 - type: entity
   parent: ClothingShoesBaseButcherable
+  id: ClothingShoesskeleton
+  name: slippers
+  description: Fluffy!
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/skeleton_suit/boots.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/skeleton_suit/boots.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
   id: ClothingShoesSlippers
   name: slippers
   description: Fluffy!
