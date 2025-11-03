@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._Erida.Ghosts;
 using Content.Shared._Erida.Strip;
 using Content.Shared.Armor;
 using Content.Shared.Clothing.Components;
@@ -314,11 +315,16 @@ public abstract partial class InventorySystem
         }
 
         // Erida edit start
-        if (inventory.BlockList.Contains(slotDefinition.SlotFlags))
+        var ignoreInventoryBlockComponent = CompOrNull<IgnoreInventoryBlockComponent>(actor);
+        if (ignoreInventoryBlockComponent != null && ignoreInventoryBlockComponent.IgnoreBlock) { }
+        else
         {
-            reason = "inventory-component-can-equip-blocked-by-other-clothing";
-            return false;
-        }
+            if (inventory.BlockList.Contains(slotDefinition.SlotFlags))
+            {
+                reason = "inventory-component-can-equip-blocked-by-other-clothing";
+                return false;
+            }
+        };
         // Erida edit end
 
         if (_whitelistSystem.IsWhitelistFail(slotDefinition.Whitelist, itemUid) ||
@@ -563,10 +569,15 @@ public abstract partial class InventorySystem
         }
 
         // Erida edit start
-        if (inventory.BlockList.Contains(slotDefinition.SlotFlags))
+        var ignoreInventoryBlockComponent = CompOrNull<IgnoreInventoryBlockComponent>(actor);
+        if (ignoreInventoryBlockComponent != null && ignoreInventoryBlockComponent.IgnoreBlock) { }
+        else
         {
-            reason = "interaction-system-user-cannot-unequip-blocked-by-other-clothing";
-            return false;
+            if (inventory.BlockList.Contains(slotDefinition.SlotFlags))
+            {
+                reason = "interaction-system-user-cannot-unequip-blocked-by-other-clothing";
+                return false;
+            }
         }
         // Erida edit end
 

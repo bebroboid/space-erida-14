@@ -126,6 +126,9 @@
     sprintModifier: 1.0
   - type: HeldSpeedModifier
   - type: GroupExamine
+  - type: SlotBlock
+    blockList: [ UNDERSHIRT ]
+    hideList: [ IDCARD ]
 
 - type: entity
   parent: [ClothingOuterArmorBaseCarapace, BaseCommandContraband]
