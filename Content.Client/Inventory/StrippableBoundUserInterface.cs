@@ -46,11 +46,17 @@ namespace Content.Client.Inventory
         [ViewVariables]
         public const string HiddenPocketEntityId = "StrippingHiddenEntity";
 
+        [ViewVariables] // Erida edit
+        public const string BlockedSlotEntityId = "BlockedSlotEntity"; // Erida edit
+
         [ViewVariables]
         private StrippingMenu? _strippingMenu;
 
         [ViewVariables]
         private readonly EntityUid _virtualHiddenEntity;
+
+        [ViewVariables] // Erida edit
+        private readonly EntityUid _virtualBlockedEntity; // Erida edit
 
         /// <summary>
         /// The current amount of added hand buttons.
@@ -73,6 +79,7 @@ namespace Content.Client.Inventory
             _strippable = EntMan.System<StrippableSystem>();
 
             _virtualHiddenEntity = EntMan.SpawnEntity(HiddenPocketEntityId, MapCoordinates.Nullspace);
+            _virtualBlockedEntity = EntMan.SpawnEntity(BlockedSlotEntityId, MapCoordinates.Nullspace);
         }
 
         protected override void Open()
@@ -240,6 +247,26 @@ namespace Content.Client.Inventory
 
             var button = new SlotButton(new SlotData(slotDef, container));
             button.Pressed += SlotPressed;
+
+            // Erida edit start
+            foreach (var blockedSlot in inv.BlockList)
+            {
+                if (blockedSlot == slotDef.SlotFlags)
+                {
+                    entity = _virtualBlockedEntity;
+                    button.Blocked = true;
+                    break;
+                }
+            }
+            foreach (var hidedSlot in inv.HideList)
+            {
+                if (hidedSlot == slotDef.SlotFlags)
+                {
+                    entity = _virtualBlockedEntity;
+                    break;
+                }
+            }
+            // Erida edit end
 
             _strippingMenu!.InventoryContainer.AddChild(button);
 
