@@ -133,3 +133,8 @@ objective-condition-fail = Захватить станцию: [color=Red] Бло
 # Objectivies
 objective-condition-blob-capture-title = Захватить станцию
 objective-condition-blob-capture-description = Ваша единственная цель - полное и безоговорочное поглощение станции. Вам необходимо владеть как минимум {$count} тайлами блоба.
+
+# Game and admins
+blob-title = Блоб
+blob-description = На станции обнаружен 5ый уровень биологической угрозы.
+blob-alert-out-off-station = Блоб раскрылся.
