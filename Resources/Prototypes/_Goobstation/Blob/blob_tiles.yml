@@ -80,7 +80,7 @@
       - ActionDowngradeBlob
   - type: BlobNode
   - type: BlobResource
-    pointsPerPulsed: 5
+    pointsPerPulsed: 8
   - type: Sprite
     sprite: _Goobstation/Blob/Mobs/blob.rsi
     drawdepth: BlobTiles

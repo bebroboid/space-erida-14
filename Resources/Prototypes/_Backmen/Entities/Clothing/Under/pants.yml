@@ -24,6 +24,8 @@
       state: icon
     - type: TemperatureProtection
       heatingCoefficient: 0.8
+    - type: SlotBlock
+      blockList: [ UNDERWEAR ]
 
 - type: entity
   parent: ClothingUnderPantsBase

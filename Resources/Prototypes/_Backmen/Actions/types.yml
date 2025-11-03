@@ -1,0 +1,8 @@
+- type: entity
+  id: ActionToggleDome
+  parent: BaseAction
+  name: Toggle energy dome
+  description: Turn the energy barrier on or off.
+  components:
+  - type: InstantAction
+    event: !type:ToggleActionEvent
