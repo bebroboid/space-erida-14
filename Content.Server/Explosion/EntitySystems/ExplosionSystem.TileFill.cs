@@ -53,7 +53,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem //Erida-Edit
 
         // get the epicenter tile indices
         if (_mapManager.TryFindGridAt(epicenter, out var gridUid, out var candidateGrid) &&
-            _mapSystem.TryGetTileRef(gridUid, candidateGrid, _mapSystem.WorldToTile(gridUid, candidateGrid, epicenter.Position), out var tileRef) &&
+            _map.TryGetTileRef(gridUid, candidateGrid, _map.WorldToTile(gridUid, candidateGrid, epicenter.Position), out var tileRef) &&
             !tileRef.Tile.IsEmpty)
         {
             epicentreGrid = gridUid;
@@ -63,7 +63,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem //Erida-Edit
         {
             // reference grid defines coordinate system that the explosion in space will use
             var gridComp = Comp<MapGridComponent>(referenceGrid.Value);
-            initialTile = _mapSystem.WorldToTile(referenceGrid.Value, gridComp, epicenter.Position);
+            initialTile = _map.WorldToTile(referenceGrid.Value, gridComp, epicenter.Position);
         }
         else
         {
@@ -276,7 +276,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem //Erida-Edit
         radius = Math.Min(radius, MaxIterations / 4);
 
         EntityUid? referenceGrid = null;
-        float mass = 0;
+        var mass = float.MinValue;
 
         // First attempt to find a grid that is relatively close to the explosion's center. Instead of looking in a
         // diameter x diameter sized box, use a smaller box with radius sized sides:
@@ -286,7 +286,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem //Erida-Edit
         _mapManager.FindGridsIntersecting(epicenter.MapId, box, ref _grids);
         foreach (var grid in _grids)
         {
-            if (TryComp(grid.Owner, out PhysicsComponent? physics) && physics.Mass > mass)
+            if (TryComp(grid.Owner, out PhysicsComponent? physics) && physics.FixturesMass > mass)
             {
                 mass = physics.Mass;
                 referenceGrid = grid.Owner;
@@ -316,7 +316,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem //Erida-Edit
         {
             if (TryComp(grid.Owner, out PhysicsComponent? physics) && physics.Mass > mass)
             {
-                mass = physics.Mass;
+                mass = physics.FixturesMass;
                 referenceGrid = grid.Owner;
             }
         }

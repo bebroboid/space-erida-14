@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation, pda-cluwne, pda-centcom and pda-brigmedic made by CatBackGround (GitHub) | pda-pirate made by brainfood1183 (Github), pda-syndi-agent drawn by Ubaser, pda-wizard recolour by Velken",
+  "copyright": "Taken from tgstation, pda-cluwne, pda-centcom and pda-brigmedic made by CatBackGround (GitHub) | pda-pirate made by brainfood1183 (Github), pda-syndi-agent drawn by Ubaser, pda-wizard recolour by Velken; pda-syndi-commander/operative by Archee1 (Github)",
   "size": {
     "x": 32,
     "y": 32
@@ -178,7 +178,13 @@
       "name": "pda-syndi"
     },
     {
-      "name": "pda-syndi-agent"
+      "name": "pda-syndi-corpsman"
+    },
+    {
+      "name": "pda-syndi-commander"
+    },
+    {
+      "name": "pda-syndi-operative"
     },
     {
       "name": "pda-virology"
@@ -191,6 +197,9 @@
     },
     {
       "name": "pda-zookeeper"
+    },
+    {
+      "name": "pda-seniorcourier"
     },
     {
       "name": "equipped-BELT",
