@@ -223,11 +223,11 @@
       state: o2
       shader: unshaded
   - type: Battery
-    maxCharge: 720
+    maxCharge: 360 # Erida
     startingCharge: 720
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargeRate: 12 # takes 1 minute to charge itself back to full
+    autoRechargeRate: # Erida
 
 - type: entity
   parent: PowerCellMicroreactor

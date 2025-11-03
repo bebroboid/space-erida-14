@@ -143,9 +143,9 @@
     sprite: Clothing/Shoes/Boots/speedboots.rsi
   - type: ToggleClothing
     action: ActionToggleSpeedBoots
-  - type: ClothingSpeedModifier
-    walkModifier: 1.5
-    sprintModifier: 1.5
+  - type: ClothingSpeedModifier # Erida
+    walkModifier: 1.25
+    sprintModifier: 1.25
   - type: Appearance
   - type: GenericVisualizer
     visuals:
