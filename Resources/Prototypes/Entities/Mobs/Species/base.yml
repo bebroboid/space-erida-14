@@ -222,6 +222,7 @@
     - AnomalyHost
   - type: Carriable
     freeHandsRequired: 2
+  - type: DirectionalEmoteTarget # Erida
 
 - type: entity
   save: false

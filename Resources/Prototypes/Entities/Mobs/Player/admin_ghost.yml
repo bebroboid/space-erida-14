@@ -111,6 +111,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0
   - type: BkmSupermatterImmune # supermatter
+  - type: DirectionalEmoteTarget # Erida
 
 - type: entity
   abstract: true
