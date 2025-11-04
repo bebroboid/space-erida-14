@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Erida.Ghosts;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CombatMode;
 using Content.Shared.Cuffs;
@@ -699,4 +700,16 @@ public abstract class SharedStrippableSystem : EntitySystem
 
         return !HasComp<BypassInteractionChecksComponent>(viewer);
     }
+
+    // Erida edit start
+    public bool[] IsInventoryIgnored(EntityUid? viewer) // [shouldShowBlocked, shouldShowHided]
+    {
+        var ignoreInventoryBlockComponent = CompOrNull<IgnoreInventoryBlockComponent>(viewer);
+        if (ignoreInventoryBlockComponent == null) { return [false, false]; }
+        else
+        {
+            return [ignoreInventoryBlockComponent.IgnoreBlock, ignoreInventoryBlockComponent.ShowAllItems];
+        }
+    }
+    // Erida edit end
 }

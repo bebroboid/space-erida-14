@@ -249,21 +249,30 @@ namespace Content.Client.Inventory
             button.Pressed += SlotPressed;
 
             // Erida edit start
-            foreach (var blockedSlot in inv.BlockList)
+            bool[] inventoryIgnored = new bool[2]; // [shouldShowBlocked, shouldShowHided]
+            inventoryIgnored = _strippable.IsInventoryIgnored(_player.LocalEntity);
+
+            if (!inventoryIgnored[0])
             {
-                if (blockedSlot == slotDef.SlotFlags)
+                foreach (var blockedSlot in inv.BlockList)
                 {
-                    entity = _virtualBlockedEntity;
-                    button.Blocked = true;
-                    break;
+                    if (blockedSlot == slotDef.SlotFlags)
+                    {
+                        entity = _virtualBlockedEntity;
+                        button.Blocked = true;
+                        break;
+                    }
                 }
             }
-            foreach (var hidedSlot in inv.HideList)
+            if (!inventoryIgnored[1])
             {
-                if (hidedSlot == slotDef.SlotFlags)
+                foreach (var hidedSlot in inv.HideList)
                 {
-                    entity = _virtualBlockedEntity;
-                    break;
+                    if (hidedSlot == slotDef.SlotFlags)
+                    {
+                        entity = _virtualBlockedEntity;
+                        break;
+                    }
                 }
             }
             // Erida edit end
