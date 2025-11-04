@@ -87,6 +87,24 @@
   - UplinkWearables
 
 - type: listing
+  id: UplinkInteQClothingBeltInteQShieldBelt
+  name: uplink-inteq-shield-belt-name
+  description: uplink-inteq-shield-belt-desc
+  productEntity: ClothingBeltInteQShieldBelt
+  discountCategory: rareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 10
+  cost:
+    TelecrystalOrange: 12
+  categories:
+  - UplinkWearables
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
+
+- type: listing
   id: UplinkInteQClothingBackpackDuffelInteQHardsuit
   name: uplink-inteq-inteq-hardsuit-name
   description: uplink-inteq-inteq-hardsuit-desc
@@ -320,7 +338,7 @@
   discountDownTo:
     TelecrystalOrange: 4
   cost:
-    TelecrystalOrange: 8
+    TelecrystalOrange: 6
   categories:
   - UplinkWeaponry
   conditions:
@@ -507,9 +525,9 @@
   productEntity: PlasmaScythe
   discountCategory: veryRareDiscounts
   discountDownTo:
-    TelecrystalOrange: 10
+    TelecrystalOrange: 14
   cost:
-    TelecrystalOrange: 15
+    TelecrystalOrange: 18
   categories:
   - UplinkWeaponry
   conditions:

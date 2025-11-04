@@ -192,7 +192,7 @@ public sealed partial class EnergyDomeSystem : EntitySystem
                     generator);
                 return false;
             }
-            if (!_powerCell.HasDrawCharge(generator))
+            if (generator.Comp.DamageEnergyDraw > cell.CurrentCharge)
             {
                 _audio.PlayPvs(generator.Comp.TurnOffSound, generator);
                 _popup.PopupEntity(
