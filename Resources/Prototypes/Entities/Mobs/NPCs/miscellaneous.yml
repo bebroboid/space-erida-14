@@ -41,6 +41,8 @@
       spawned:
       - id: FoodMeatChicken
         amount: 2
+      - id: WeaponMakeshiftLaser #Erida
+        amount: 1 
     - type: MovementSpeedModifier
       baseWalkSpeed: 2
       baseSprintSpeed: 5
