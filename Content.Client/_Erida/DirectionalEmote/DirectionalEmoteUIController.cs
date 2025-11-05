@@ -1,8 +1,4 @@
-
-using Content.Client._Erida.DirectionalEmote;
-using Content.Client.Chat;
 using JetBrains.Annotations;
-using Microsoft.CodeAnalysis.Elfie.Serialization;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 
