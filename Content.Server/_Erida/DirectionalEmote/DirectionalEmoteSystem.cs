@@ -31,14 +31,14 @@ public sealed partial class DirectionalEmoteSystem : EntitySystem
         var rangeError = Loc.GetString("directional-emote-range-error");
         if (!_examineSystem.InRangeUnOccluded(GetEntity(args.Source), GetEntity(args.Target), 10))
         {
-            _chatManager.ChatMessageToOne(ChatChannel.Emotes, rangeError, rangeError, default, false, targetActor.PlayerSession.Channel);
+            _chatManager.ChatMessageToOne(ChatChannel.Emotes, rangeError, rangeError, default, false, sourceActor.PlayerSession.Channel);
             return;
         }
 
         var lengthError = Loc.GetString("directional-emote-length-error");
         if (args.Text.Length > 10000)
         {
-            _chatManager.ChatMessageToOne(ChatChannel.Emotes, lengthError, lengthError, default, false, targetActor.PlayerSession.Channel);
+            _chatManager.ChatMessageToOne(ChatChannel.Emotes, lengthError, lengthError, default, false, sourceActor.PlayerSession.Channel);
             return;
         }
 
