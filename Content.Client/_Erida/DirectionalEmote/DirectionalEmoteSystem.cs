@@ -17,7 +17,7 @@ public sealed partial class DirectionalEmoteSystem : EntitySystem
 
     public void ShowMessage(NetEntity source, NetEntity target, string text)
     {
-        if (text == "")
+        if (text == "" || text.Length > 10000)
             return;
 
         RaiseNetworkEvent(new SendDirectionalEmoteEvent(source, target, text));
