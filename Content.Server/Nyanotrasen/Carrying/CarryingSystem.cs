@@ -110,8 +110,8 @@ namespace Content.Server.Carrying
                 Text = Loc.GetString("carry-verb"),
                 Priority = 2
             };
-            // Erida - Fix this system
-            // args.Verbs.Add(verb);
+
+            args.Verbs.Add(verb);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Content.Server.Carrying
             if (!HasComp<CarriableComponent>(args.BlockingEntity))
                 return;
 
-            DropCarried(uid, args.BlockingEntity);
+            DropCarried(uid, component.Carried);
         }
 
         /// <summary>
