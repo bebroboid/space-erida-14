@@ -163,8 +163,8 @@
             reagent: Nitrium
             min: 42
         statusLifetime: 5
-        walkSpeedModifier: 1.18
-        sprintSpeedModifier: 1.18
+        walkSpeedModifier: 1.35
+        sprintSpeedModifier: 1.35
       - !type:HealthChange
         conditions:
           - !type:ReagentThreshold

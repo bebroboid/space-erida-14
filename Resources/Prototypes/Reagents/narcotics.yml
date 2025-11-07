@@ -22,19 +22,14 @@
           min: 10
         damage:
           types:
-            Poison: 4 # Erida
+            Poison: 3 # Erida
             Asphyxiation: 2
     Narcotic:
       metabolismRate: 1.0
       effects:
-      - !type:ModifyStatusEffect # Erida
-        effectProto: StatusEffectSeeingRainbow
-        time: 35
-        type: Add
-        refresh: false
       - !type:MovespeedModifier
-        walkSpeedModifier: 1.18
-        sprintSpeedModifier: 1.18
+        walkSpeedModifier: 1.30
+        sprintSpeedModifier: 1.30
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
