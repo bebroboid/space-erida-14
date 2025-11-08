@@ -20,14 +20,15 @@ public sealed class ChatProtectionSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly ISharedAdminManager _admin = default!;
-    [Dependency] private readonly GhostKickManager _ghostKickManager = default!;
     [Dependency] private readonly ISharedChatManager _chat = default!;
+    [Dependency] private readonly GhostKickManager _ghostKickManager = default!;
 
     private ISawmill _log = default!;
     private readonly List<ChatProtectionListPrototype> _index = new();
     private readonly HashSet<string> _icWords = new();
     private readonly HashSet<string> _oocWords = new();
     private bool _enabled = false;
+    private bool _cacheDone = false;
 
     public override void Initialize()
     {
@@ -95,7 +96,8 @@ public sealed class ChatProtectionSystem : EntitySystem
         if (_admin.IsAdmin(player, true))
            return false;
 
-        CachePrototypes();
+        if (!_cacheDone) // Something like initalization for prototypes
+            CachePrototypes();
 
         foreach (var word in _icWords)
         {
@@ -105,6 +107,8 @@ public sealed class ChatProtectionSystem : EntitySystem
             HandleViolation(session, word, "IC");
             return true;
         }
+
+        _cacheDone = true;
 
         return false;
     }
@@ -117,7 +121,8 @@ public sealed class ChatProtectionSystem : EntitySystem
         if (_admin.IsAdmin(session, true))
             return false;
 
-        CachePrototypes();
+        if (!_cacheDone) // Something like initalization for prototypes
+            CachePrototypes();
 
         foreach (var word in _oocWords)
         {
@@ -127,6 +132,8 @@ public sealed class ChatProtectionSystem : EntitySystem
                 return true;
             }
         }
+
+        _cacheDone = true;
 
         return false;
     }
