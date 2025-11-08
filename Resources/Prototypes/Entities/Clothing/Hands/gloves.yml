@@ -454,6 +454,18 @@
     fiberColor: fibers-yellow
   - type: FingerprintMask
 
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesskeleton
+  name: rubber gloves
+  description: High-quality rubber gloves, squeaky to do some cleaning!
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/skeleton_suit/gloves.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/skeleton_suit/gloves.rsi
+  - type: FingerprintMask
+
 #Knuckledusters
 - type: entity
   parent: [ClothingHandsBase, BaseMinorContraband]

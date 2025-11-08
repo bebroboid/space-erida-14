@@ -1,5 +1,33 @@
 - type: entity
   parent: ClothingOuterStorageBase
+  id: ClothingOuterBlanket
+  name: apron
+  description: A fancy apron for a stylish person.
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/blanket/blanket.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/blanket/blanket.rsi
+  - type: Tag
+    tags:
+    - Apron
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterСape
+  name: apron
+  description: A fancy apron for a stylish person.
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/cape/cape.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/cape/cape.rsi
+  - type: Tag
+    tags:
+    - Apron
+
+- type: entity
+  parent: ClothingOuterStorageBase
   id: ClothingOuterApron
   name: apron
   description: A fancy apron for a stylish person.

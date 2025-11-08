@@ -7,6 +7,12 @@
   components:
   - type: HumanoidAppearance
     species: Diona
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+    - Tail
   - type: Hunger
     baseDecayRate: 0.0083
   - type: Thirst
@@ -130,6 +136,12 @@
   components:
   - type: HumanoidAppearance
     species: Diona
+    hideLayersOnEquip: # Erida edit start
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+    - Tail # Erida edit end
   - type: Inventory
     templateId: diona
     femaleDisplacements:

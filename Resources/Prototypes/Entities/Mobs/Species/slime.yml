@@ -37,6 +37,12 @@
     delay: 0.5
   - type: HumanoidAppearance
     species: SlimePerson
+    hideLayersOnEquip: # Erida edit start
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+    - Tail # Erida edit end
   - type: Speech
     speechVerb: Slime
     speechSounds: Slime
@@ -125,7 +131,7 @@
     understands:
     - TauCetiBasic
     - Slime
-    
+
 - type: entity
   parent: MobHumanDummy
   id: MobSlimePersonDummy
@@ -133,6 +139,12 @@
   components:
   - type: HumanoidAppearance
     species: SlimePerson
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+    - Tail
   - type: Inventory
     femaleDisplacements:
       jumpsuit:

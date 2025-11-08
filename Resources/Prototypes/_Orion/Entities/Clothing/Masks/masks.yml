@@ -8,6 +8,7 @@
   - type: HideLayerClothing
     slots:
     - Snout
+    - Hair
   - type: UserInterface
     interfaces:
       enum.VoiceMaskUIKey.Key:

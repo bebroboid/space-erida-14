@@ -1,5 +1,60 @@
 - type: entity
   parent: ClothingHeadBase
+  id: ClothingHeadBeast
+  name: beaver hat
+  description: "\"Gentlemen?\""
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/beast/head.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/beast/head.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadFrankenstein
+  name: beaver hat
+  description: "\"Gentlemen?\""
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/frankenstein/head.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/frankenstein/head.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadGhostface
+  name: beaver hat
+  description: "\"Gentlemen?\""
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/ghostface/head.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/ghostface/head.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadskeleton
+  name: beaver hat
+  description: "\"Gentlemen?\""
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/skeleton_suit/head.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/skeleton_suit/head.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadWhitch
+  name: beaver hat
+  description: "\"Gentlemen?\""
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/whitch_hat/head.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/whitch_hat/head.rsi
+
+- type: entity
+  parent: ClothingHeadBase
   id: ClothingHeadHatBeaverHat
   name: beaver hat
   description: "\"Gentlemen?\""

@@ -16,6 +16,26 @@
   - UplinkPointless
 
 - type: listing
+  id: UplinkInteQCatEars
+  name: uplink-cat-ears-name
+  description: uplink-cat-ears-desc
+  productEntity: ClothingHeadHatCatEars
+  cost:
+    TelecrystalOrange: 16
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkInteQJugPlasma
+  name: uplink-jug-plasma-name
+  description: uplink-jug-plasma-desc
+  productEntity: JugPlasma
+  cost:
+    TelecrystalOrange: 2
+  categories:
+  - UplinkPointless
+
+- type: listing
   id: UplinkInteQBarberScissors
   name: uplink-barber-scissors-name
   description: uplink-barber-scissors-desc
@@ -65,6 +85,24 @@
     TelecrystalOrange: 8
   categories:
   - UplinkWearables
+
+- type: listing
+  id: UplinkInteQClothingBeltInteQShieldBelt
+  name: uplink-inteq-shield-belt-name
+  description: uplink-inteq-shield-belt-desc
+  productEntity: ClothingBeltInteQShieldBelt
+  discountCategory: rareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 10
+  cost:
+    TelecrystalOrange: 12
+  categories:
+  - UplinkWearables
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: UplinkInteQClothingBackpackDuffelInteQHardsuit
@@ -300,7 +338,7 @@
   discountDownTo:
     TelecrystalOrange: 4
   cost:
-    TelecrystalOrange: 8
+    TelecrystalOrange: 6
   categories:
   - UplinkWeaponry
   conditions:
@@ -487,9 +525,9 @@
   productEntity: PlasmaScythe
   discountCategory: veryRareDiscounts
   discountDownTo:
-    TelecrystalOrange: 10
+    TelecrystalOrange: 14
   cost:
-    TelecrystalOrange: 15
+    TelecrystalOrange: 18
   categories:
   - UplinkWeaponry
   conditions:
@@ -1047,6 +1085,16 @@
     TelecrystalOrange: 3
   cost:
     TelecrystalOrange: 6
+  categories:
+  - UplinkDeception
+
+- type: listing
+  id: UplinkInteQBlueprintInteQ
+  name: uplink-inteq-blueprint-desc
+  description: uplink-inteq-blueprint-desc
+  productEntity: BlueprintInteQ
+  cost:
+    TelecrystalOrange: 10
   categories:
   - UplinkDeception
 

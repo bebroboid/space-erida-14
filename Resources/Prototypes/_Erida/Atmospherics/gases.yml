@@ -6,7 +6,7 @@
   molarMass: 40
   color: 0054AA
   reagent: Pluoxium
-  pricePerMole: 5
+  pricePerMole: 3
 
 - type: gas
   id: 10
@@ -16,7 +16,7 @@
   molarMass: 2
   color: FFFFFF
   reagent: Hydrogen
-  pricePerMole: 5
+  pricePerMole: 3
 
 - type: gas
   id: 11
@@ -42,7 +42,7 @@
   gasVisbilityFactor: 500
   color: d97e7e
   reagent: Healium
-  pricePerMole: 12
+  pricePerMole: 8
 
 - type: gas
   id: 13
@@ -56,7 +56,7 @@
   gasVisbilityFactor: 500
   color: 7E4732
   reagent: Nitrium
-  pricePerMole: 12
+  pricePerMole: 6
 
 - type: gas
   id: 14

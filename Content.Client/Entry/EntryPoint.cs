@@ -3,6 +3,7 @@ using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.DebugMon;
 using Content.Client.Corvax.TTS;
+using Content.Client.Options;
 using Content.Client.Eui;
 using Content.Client.Fullscreen;
 using Content.Client.GameTicking.Managers;
@@ -78,13 +79,20 @@ namespace Content.Client.Entry
         [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _clientsidePlaytimeManager = default!;
 
+
+        // start-backmen: ioc
+        //[Dependency] private readonly Content.Corvax.Interfaces.Client.IClientSponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
+        //[Dependency] private readonly Content.Corvax.Interfaces.Client.IClientJoinQueueManager _queueManager = default!; // Corvax-Queue
+        //[Dependency] private readonly Content.Corvax.Interfaces.Client.IClientDiscordAuthManager _discordAuthManager = default!; // Corvax-DiscordAuth
+        // end-backmen: ioc
+
         public override void Init()
         {
             ClientContentIoC.Register();
 
             foreach (var callback in TestingCallbacks)
             {
-                var cast = (ClientModuleTestingCallbacks)callback;
+                var cast = (ClientModuleTestingCallbacks) callback;
                 cast.ClientBeforeIoC?.Invoke();
             }
 
@@ -129,6 +137,15 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("codewordGenerator");
             _prototypeManager.RegisterIgnore("codewordFaction");
             _prototypeManager.RegisterIgnore("stationGoal"); // Corvax-StationGoal
+
+            // Begin Backmen: our ignored prototypes.
+            _prototypeManager.RegisterIgnore("npcConversationTree");
+            _prototypeManager.RegisterIgnore("shipwreckDestination");
+            _prototypeManager.RegisterIgnore("shipwreckFaction");
+            _prototypeManager.RegisterIgnore("bkmloadout");
+            _prototypeManager.RegisterIgnore("specForceTeam");
+            // End Backmen.
+            _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();
@@ -177,6 +194,11 @@ namespace Content.Client.Entry
             _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
             _documentParsingManager.Initialize();
             _titleWindowManager.Initialize();
+
+            // start-backmen: ioc
+            IoCManager.Resolve<Content.Corvax.Interfaces.Client.IClientJoinQueueManager>().Initialize();
+            IoCManager.Resolve<Content.Corvax.Interfaces.Client.IClientDiscordAuthManager>().Initialize();
+            // end-backmen: ioc
 
             _baseClient.RunLevelChanged += (_, args) =>
             {

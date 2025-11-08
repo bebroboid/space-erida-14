@@ -8,9 +8,11 @@
   - type: HumanoidAppearance
     species: Reptilian
     hideLayersOnEquip:
+    - Hair
     - Snout
     - HeadTop
     - HeadSide
+    - Tail
     undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Hunger
   - type: Puller
@@ -115,9 +117,11 @@
   - type: HumanoidAppearance
     species: Reptilian
     hideLayersOnEquip:
+    - Hair # Erida edit
     - Snout
     - HeadTop
     - HeadSide
+    - Tail # Erida edit
     undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Inventory
     speciesId: reptilian

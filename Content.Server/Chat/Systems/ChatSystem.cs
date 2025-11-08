@@ -33,6 +33,7 @@ using Content.Shared.Players.RateLimiting;
 using Content.Shared.Radio;
 using Content.Shared.Speech;
 using Content.Shared.Whitelist;
+using Content.Server._Orion.ServerProtection.Chat;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -74,6 +75,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly ChatProtectionSystem _chatProtection = default!; // Orion
 
     // Corvax-TTS-Start: Moved from Server to Shared
     // public const int VoiceRange = 10; // how far voice goes in world units
@@ -207,6 +209,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (player != null && _chatManager.HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
 
+        // Orion-Start
+        if (_chatProtection.CheckICMessage(message, source))
+            return;
+        // Orion-End
+
         // Sus
         if (player?.AttachedEntity is { Valid: true } entity && source != entity)
         {
@@ -309,7 +316,12 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (player?.AttachedEntity is not { Valid: true } entity || source != entity)
             return;
 
-        message = SanitizeInGameOOCMessage(message);
+        // Orion-Start
+        if (_chatProtection.CheckOOCMessage(message, player))
+            return;
+        // Orion-End
+
+        message = SanitizeInGameOOCMessage(message, player); // Orion-Edit | player
 
         var sendType = type;
         // If dead player LOOC is disabled, unless you are an admin with Moderator perms, send dead messages to dead chat
@@ -430,6 +442,11 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (!EntityManager.TryGetComponent<StationDataComponent>(station, out var stationDataComp)) return;
 
+        // Orion-Start
+        if (_chatProtection.CheckICMessage(message, source))
+            return;
+        // Orion-End
+
         var filter = _stationSystem.GetInStation(stationDataComp);
 
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source, false, true, colorOverride);
@@ -466,6 +483,11 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (message.Length == 0)
             return;
+
+        // Orion-Start
+        if (_chatProtection.CheckICMessage(message, source))
+            return;
+        // Orion-End
 
         var speech = GetSpeechVerb(source, message);
 
@@ -541,6 +563,11 @@ private void SendEntityWhisper(
 
         var obfuscatedMessage = ObfuscateMessageReadability(message, 0.2f);
 
+        // Orion-Start
+        if (_chatProtection.CheckICMessage(message, source))
+            return;
+        // Orion-End
+
         // get the entity's name by visual identity (if no override provided).
         string nameIdentity = FormattedMessage.EscapeText(nameOverride ?? Identity.Name(source, EntityManager));
         // get the entity's name by voice (if no override provided).
@@ -586,6 +613,11 @@ private void SendEntityWhisper(
             if (session.AttachedEntity is not { Valid: true } playerEntity)
                 continue;
             listener = session.AttachedEntity.Value;
+
+            // Erida-start
+            if (TryComp<VisibilityComponent>(source, out var visibility))
+                if (!TryComp<EyeComponent>(listener, out var eye) || visibility.Layer != eye.VisibilityMask) continue;
+            // Erida-end
 
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
@@ -716,6 +748,11 @@ private void SendEntityWhisper(
         if (!_critLoocEnabled && _mobStateSystem.IsCritical(source))
             return;
 
+        // Orion-Start
+        if (_chatProtection.CheckOOCMessage(message, player)) // Not IC because can use OOC words.
+            return;
+        // Orion-End
+
         var wrappedMessage = Loc.GetString("chat-manager-entity-looc-wrap-message",
             ("entityName", name),
             ("message", FormattedMessage.EscapeText(message)));
@@ -735,6 +772,12 @@ private void SendEntityWhisper(
         var clients = GetDeadChatClients();
         var playerName = Name(source);
         string wrappedMessage;
+
+        // Orion-Start
+        if (_chatProtection.CheckOOCMessage(message, player)) // Not IC because can use OOC words.
+            return;
+        // Orion-End
+
         if (_adminManager.IsAdmin(player))
         {
             wrappedMessage = Loc.GetString("chat-manager-send-admin-dead-chat-wrap-message",
@@ -838,6 +881,11 @@ private void SendEntityWhisper(
                 continue;
             var listener = session.AttachedEntity.Value;
 
+            // Erida-start
+            if (TryComp<VisibilityComponent>(source, out var visibility))
+                if (!TryComp<EyeComponent>(listener, out var eye) || visibility.Layer != eye.VisibilityMask) continue;
+            // Erida-end
+
             var canUnderstand = _language.CanUnderstand(listener, language.ID);
             // If the channel does not support languages, or the entity can understand the message, send the original message, otherwise send the obfuscated version
             if (channel == ChatChannel.LOOC || channel == ChatChannel.Emotes || canUnderstand)
@@ -916,9 +964,15 @@ private void SendEntityWhisper(
         return prefix + newMessage;
     }
 
-    private string SanitizeInGameOOCMessage(string message)
+    private string SanitizeInGameOOCMessage(string message, ICommonSession? session) // Orion-Edit | ICommonSession
     {
         var newMessage = message.Trim();
+
+        // Orion-Start
+        if (_chatProtection.CheckOOCMessage(newMessage, session!))
+            return string.Empty;
+        // Orion-End
+
         newMessage = FormattedMessage.EscapeText(newMessage);
 
         return newMessage;

@@ -8,7 +8,11 @@
   - type: HumanoidAppearance
     species: Moth
     hideLayersOnEquip:
+    - Hair # Erida edit start
+    - Snout
     - HeadTop
+    - HeadSide
+    - Tail # Erida edit end
   - type: Hunger
   - type: Thirst
   - type: Icon

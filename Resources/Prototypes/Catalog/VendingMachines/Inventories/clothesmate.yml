@@ -2,6 +2,16 @@
 - type: vendingMachineInventory
   id: ClothesMateInventory
   startingInventory:
+    ClothingHeadBeast: 5
+    ClothingHeadFrankenstein: 5
+    ClothingHeadGhostface: 5
+    ClothingHeadskeleton: 5
+    ClothingUniformJumpskirtSkeleton: 5
+    ClothingShoesskeleton: 5
+    ClothingHandsGlovesskeleton: 5
+    ClothingHeadWhitch: 5
+    ClothingOuterBlanket: 5
+    ClothingOuterСape: 5
     ClothingBackpack: 5
     ClothingBackpackDuffel: 5
     ClothingBackpackSatchel: 3

@@ -28,6 +28,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared.Tag; //cats-shield
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
@@ -62,7 +63,8 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] private   readonly SharedPhysicsSystem _physics = default!;
     [Dependency] protected readonly SharedPopupSystem PopupSystem = default!;
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
-    [Dependency] private   readonly SharedStaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
+    [Dependency] private readonly TagSystem _tag = default!; // Orion
 
     private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
 
@@ -581,6 +583,8 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         var resistanceBypass = GetResistanceBypass(meleeUid, user, component);
         var entities = GetEntityList(ev.Entities);
 
+        entities = entities.Where(e => !_tag.HasTag(e, "MeleeHitIgnore")).ToList(); // Orion
+
         if (entities.Count == 0)
         {
             if (meleeUid == user)
@@ -637,6 +641,11 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             if (entity == user ||
                 !damageQuery.HasComponent(entity))
                 continue;
+
+            // Orion-Start
+            if (_tag.HasTag(entity, "MeleeHitIgnore"))
+                continue;
+            // Orion-End
 
             targets.Add(entity);
         }
@@ -737,13 +746,13 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         for (var i = 0; i < increments; i++)
         {
             var castAngle = new Angle(baseAngle + increment * i);
+            var ray = new CollisionRay(position, castAngle.ToWorldVec(), AttackMask); // Orion | Make CollisionRay var for "var res"
             var res = _physics.IntersectRay(mapId,
-                new CollisionRay(position,
-                    castAngle.ToWorldVec(),
-                    AttackMask),
+                ray,
                 range,
                 ignore,
                 false)
+                .Where(x => !_tag.HasTag(x.HitEntity, "MeleeHitIgnore")) // Orion
                 .ToList();
 
             if (res.Count != 0)

@@ -92,6 +92,12 @@
     horizontalRotation: 90
   - type: HumanoidAppearance
     species: Human
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+    - Tail
   - type: TypingIndicator
   - type: SlowOnDamage
     speedModifierThresholds:
@@ -222,6 +228,7 @@
     - AnomalyHost
   - type: Carriable
     freeHandsRequired: 2
+  - type: DirectionalEmoteTarget # Erida
 
 - type: entity
   save: false
@@ -353,6 +360,12 @@
   - type: Appearance
   - type: HumanoidAppearance
     species: Human
+    hideLayersOnEquip: # Erida edit start
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+    - Tail # Erida edit end
   - type: Body
     prototype: Human
     requiredLegs: 2
