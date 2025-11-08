@@ -139,6 +139,7 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         }
 
         Badge.Visible = PlayerBadge();
+        SetSize = MinSize + new Vector2(50, 50);
     }
 
     private static string GetContentWithEmptyMessage(string content, string emptyMessageKey)
