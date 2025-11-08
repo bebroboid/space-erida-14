@@ -276,6 +276,16 @@ namespace Content.Server.Database
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
+                // Orion-Start
+                profile.OOCFlavorText,
+                profile.CharacterFlavorText,
+                profile.GreenFlavorText,
+                profile.YellowFlavorText,
+                profile.RedFlavorText,
+                profile.TagsFlavorText,
+                profile.LinksFlavorText,
+                profile.NSFWFlavorText,
+                // Orion-End
                 profile.Species,
                 voice, // Corvax-TTS
                 profile.Age,
@@ -313,6 +323,16 @@ namespace Content.Server.Database
 
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
+            // Orion-Start
+            profile.OOCFlavorText = humanoid.OOCFlavorText;
+            profile.CharacterFlavorText = humanoid.CharacterFlavorText;
+            profile.GreenFlavorText = humanoid.GreenFlavorText;
+            profile.YellowFlavorText = humanoid.YellowFlavorText;
+            profile.RedFlavorText = humanoid.RedFlavorText;
+            profile.TagsFlavorText = humanoid.TagsFlavorText;
+            profile.LinksFlavorText = humanoid.LinksFlavorText;
+            profile.NSFWFlavorText = humanoid.NSFWFlavorText;
+            // Orion-End
             profile.Species = humanoid.Species;
             profile.Voice = humanoid.Voice; // Corvax-TTS
             profile.Age = humanoid.Age;
