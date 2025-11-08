@@ -1,3 +1,4 @@
+using Content.Server._Orion.ServerProtection.Chat;
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -51,6 +52,7 @@ namespace Content.Server.Entry
         private IServerDbManager? _dbManager;
         private IWatchlistWebhookManager _watchlistWebhookManager = default!;
         private IConnectionManager? _connectionManager;
+        private ChatProtectionSystem _chatProtection = default!; // Orion
 
         /// <inheritdoc />
         public override void Init()
@@ -124,6 +126,8 @@ namespace Content.Server.Entry
                 _watchlistWebhookManager.Initialize();
                 IoCManager.Resolve<JobWhitelistManager>().Initialize();
                 IoCManager.Resolve<PlayerRateLimitManager>().Initialize();
+                _chatProtection = IoCManager.Resolve<ChatProtectionSystem>(); // Orion
+                _chatProtection.Initialize(); // Orion
             }
         }
 
