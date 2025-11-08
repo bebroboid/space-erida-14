@@ -15,13 +15,17 @@ public sealed partial class DirectionalEmoteWindow : FancyWindow
     public NetEntity Target;
     public string Text = "";
     public Action? AcceptPressed;
-
+    public Action? MessageChanged;
     public DirectionalEmoteWindow()
     {
         RobustXamlLoader.Load(this);
 
         AcceptButton.OnPressed += _ => AcceptPressed?.Invoke();
-        MessageInput.OnTextChanged += e => Text = Rope.Collapse(e.TextRope).Trim();
+        MessageInput.OnTextChanged += e =>
+        {
+            Text = Rope.Collapse(e.TextRope).Trim();
+            MessageChanged?.Invoke();
+        };
         CloseButton.OnPressed += _ => Dispose();
     }
 }
