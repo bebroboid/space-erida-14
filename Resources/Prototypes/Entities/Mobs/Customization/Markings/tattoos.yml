@@ -114,7 +114,6 @@
   id: TattooEyeRight
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, Felinid, SlimePerson, Reptilian, Dwarf]
   coloring:
     default:
       type:
@@ -128,7 +127,6 @@
   id: TattooEyeLeft
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, Felinid, SlimePerson, Reptilian, Dwarf]
   coloring:
     default:
       type:
