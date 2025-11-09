@@ -1,3 +1,4 @@
+using Content.Client.Chat.TypingIndicator;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
@@ -8,6 +9,8 @@ namespace Content.Client._Erida.DirectionalEmote;
 public sealed class DirectionalEmoteUIController : UIController
 {
     [UISystemDependency] private readonly DirectionalEmoteSystem _directionalEmoteSystem = default!;
+    [UISystemDependency] private readonly TypingIndicatorSystem _typingIndicator = default!;
+
     private DirectionalEmoteWindow _emoteWindow = default!;
 
     public void OpenWindow()
@@ -17,8 +20,18 @@ public sealed class DirectionalEmoteUIController : UIController
         _emoteWindow.OpenCentered();
         _emoteWindow.MoveToFront();
 
+        _typingIndicator.ClientChangedWindowStatus(true);
+
+        _emoteWindow.MessageChanged += () =>
+        {
+            _typingIndicator.ClientChangedChatText();
+            _typingIndicator.ClientChangedWindowStatus(true); ;
+        };
+
         _emoteWindow.AcceptPressed += () =>
         {
+            _typingIndicator.ClientChangedWindowStatus(false);
+            _typingIndicator.ClientSubmittedChatText();
             _directionalEmoteSystem.ShowMessage(_emoteWindow.Source, _emoteWindow.Target, _emoteWindow.Text);
             _emoteWindow.Dispose();
         };
@@ -40,6 +53,7 @@ public sealed class DirectionalEmoteUIController : UIController
 
         if (_emoteWindow.IsOpen)
         {
+            _typingIndicator.ClientChangedWindowStatus(false);
             _emoteWindow.Dispose();
         }
         else
