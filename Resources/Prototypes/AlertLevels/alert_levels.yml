@@ -6,14 +6,14 @@
   levels:
     green:
       announcement: alert-level-green-announcement
-      sound: /Audio/_Erida/Alerts/green.ogg
+      sound: /Audio/Misc/greenalert.ogg
       color: Green
       emergencyLightColor: LawnGreen
       shuttleTime: 600
     blue:
       announcement: alert-level-blue-announcement
       sound:
-        path: /Audio/_Erida/Alerts/blue.ogg
+        path: /Audio/Misc/bluealert.ogg
         params:
           volume: -2
       color: DodgerBlue
@@ -36,7 +36,7 @@
     amber:
       announcement: alert-level-amber-announcement
       sound:
-        path: /Audio/_Erida/Alerts/amber.ogg
+        path: /Audio/Backmen/Misc/new-style-alerts/amber_code_new_style.ogg
         params:
           volume: -2
       color: Orange
@@ -46,7 +46,7 @@
     red:
       announcement: alert-level-red-announcement
       sound:
-        path: /Audio/_Erida/Alerts/red.ogg
+        path: /Audio/Misc/redalert.ogg
         params:
           volume: -2
       color: Red
@@ -57,7 +57,7 @@
       announcement: alert-level-gamma-announcement
       selectable: false
       sound:
-        path: /Audio/_Erida/Alerts/gamma.ogg # Corvax: Return of the old siren sound
+        path: /Audio/Corvax/Misc/siren.ogg # Corvax: Return of the old siren sound
         params:
           volume: -4
       disableSelection: true
@@ -68,7 +68,7 @@
       announcement: alert-level-delta-announcement
       selectable: false
       sound:
-        path: /Audio/_Erida/Alerts/delta.ogg
+        path: /Audio/Misc/delta.ogg
         params:
           volume: -4
       disableSelection: true
@@ -80,7 +80,7 @@
       announcement: alert-level-epsilon-announcement
       selectable: false
       sound:
-        path: /Audio/_Erida/Alerts/epsilon.ogg
+        path: /Audio/Misc/epsilon.ogg
         params:
           volume: -2
       disableSelection: true
@@ -91,7 +91,7 @@
     sigma:
       announcement: alert-level-sigma-announcement
       selectable: false
-      sound: /Audio/_Erida/Alerts/sigma.ogg
+      sound: /Audio/Backmen/Misc/new-style-alerts/sigma_code_new_style.ogg
       disableSelection: true
       color: Pink
       emergencyLightColor: Aqua
