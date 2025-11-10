@@ -23,11 +23,11 @@
   - MofficTranslator
   - ElvishTranslator
   - DwarvenTranslator
-  - ShadokinTranslator
+  - MarTranslator
   - ValyrianStandardTranslator
   - ElvishStandardTranslatorImplanter
   - DwarvenStandardTranslatorImplanter
-  - ShadokinStandardTranslatorImplanter
+  - MarStandardTranslatorImplanter
   - ValyrianStandardTranslatorImplanter
   - CarshnilTranslatorImplanter
   - EvePishtuTranslatorImplanter

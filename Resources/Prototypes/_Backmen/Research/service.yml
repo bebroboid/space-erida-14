@@ -220,7 +220,7 @@
   - MofficTranslator
   - ElvishTranslator
   - DwarvenTranslator
-  - ShadokinTranslator
+  - MarTranslator
   - ValyrianStandardTranslator
   - EvePishtuTranslator
   - CarshnilTranslator
@@ -277,7 +277,7 @@
   - MofficTranslatorImplanter
   - ElvishStandardTranslatorImplanter
   - DwarvenStandardTranslatorImplanter
-  - ShadokinStandardTranslatorImplanter
+  - MarStandardTranslatorImplanter
   - ValyrianStandardTranslatorImplanter
   - CarshnilTranslatorImplanter
   - EvePishtuTranslatorImplanter
