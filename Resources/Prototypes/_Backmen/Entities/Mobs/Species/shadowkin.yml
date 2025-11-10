@@ -5,6 +5,7 @@
   name: Urist McFloof
   abstract: true
   components:
+  - type: OnGhostAttemptDamage # При суициде будет нормально наносится урон не удушением а кровотечением.
   - type: Butcherable
     butcheringType: Spike
     spawned:
