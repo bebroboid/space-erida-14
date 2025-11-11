@@ -3,13 +3,13 @@
   id: names-shadowkin-male-first
   values:
     prefix: names-shadowkin-male-first-
-    count: 77
+    count: 76
 
 - type: localizedDataset
   id: names-shadowkin-female-first
   values:
     prefix: names-shadowkin-female-first-
-    count: 77
+    count: 76
 
 # Last names
 - type: localizedDataset
