@@ -2,8 +2,8 @@ language-Universal-name = Межгалактический
 language-Universal-description =
     Знания всех языков, ну типа, да.
             Вы надмозг.
-language-Bubblish-name = Баблиш
-language-Bubblish-description = Язык слаймов. Поскольку он представляет собой смесь булькающих звуков и хлопков, людям очень трудно говорить на нем без использования механических приспособлений.
+language-Slime-name = Баблиш
+language-Slime-description = Язык слаймов. Поскольку он представляет собой смесь булькающих звуков и хлопков, людям очень трудно говорить на нем без использования механических приспособлений.
 language-RootSpeak-name = Язык корней
 language-RootSpeak-description = Странный свистящий язык, на котором говорят Дионы.
 language-Draconic-name = Драконический

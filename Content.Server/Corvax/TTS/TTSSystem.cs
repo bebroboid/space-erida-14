@@ -68,7 +68,7 @@ public sealed partial class TTSSystem : EntitySystem
         RaiseLocalEvent(uid, voiceEv);
         voiceId = voiceEv.VoiceId;
 
-        if (voiceId == null || !_prototypeManager.TryIndex(voiceId.Value, out var protoVoice))
+        if (!_prototypeManager.TryIndex<TTSVoicePrototype>(voiceId, out var protoVoice))
             return;
 
         if (args.IsWhisper)

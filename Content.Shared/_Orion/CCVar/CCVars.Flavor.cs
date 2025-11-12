@@ -41,7 +41,7 @@ public sealed partial class CCVars
     ///     Sets the maximum length for character description text.
     /// </summary>
     public static readonly CVarDef<int> CharacterDescriptionLength =
-        CVarDef.Create("ic.character_description_length", 2500, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("ic.character_description_length", 5000, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     Sets the maximum length for green preferences text.
