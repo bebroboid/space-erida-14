@@ -293,6 +293,7 @@
     - Canilunzt
     - Freespeak
     - Spider
+    - Wawa
     understands:
     - Binary
     - TauCetiBasic
@@ -308,6 +309,7 @@
     - Canilunzt
     - Freespeak
     - Spider
+    - Wawa
   - type: Tag
     tags:
     - HideContextMenu

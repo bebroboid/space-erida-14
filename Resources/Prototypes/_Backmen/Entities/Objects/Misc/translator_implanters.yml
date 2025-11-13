@@ -124,3 +124,11 @@
   components:
   - type: Implanter
     implant: Eve-pishtuStandardTranslatorImplant
+
+- type: entity
+  id: WawaStandardTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: Wawa standard translator implant
+  components:
+  - type: Implanter
+    implant: WawaStandardTranslatorImplant

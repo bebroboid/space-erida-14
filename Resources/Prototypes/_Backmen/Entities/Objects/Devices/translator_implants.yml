@@ -217,3 +217,18 @@
     - Shark
     requires:
     - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: WawaStandardTranslatorImplant
+  name: Shadowkin standard translator implant
+  description: An implant giving the ability to understand and speak Wawa Standard.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Wawa
+    spoken:
+    - Wawa
+    requires:
+    - TauCetiBasic

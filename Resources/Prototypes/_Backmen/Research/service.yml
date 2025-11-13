@@ -224,6 +224,7 @@
   - ValyrianStandardTranslator
   - EvePishtuTranslator
   - CarshnilTranslator
+  - WawaTranslator
   position: 7,6
 
 - type: technology
@@ -281,6 +282,7 @@
   - ValyrianStandardTranslatorImplanter
   - CarshnilTranslatorImplanter
   - EvePishtuTranslatorImplanter
+  - WawaStandardTranslatorImplanter
   technologyPrerequisites:
   - TranslationImplanter
   - TranslationDeviceAdvanced

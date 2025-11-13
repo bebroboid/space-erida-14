@@ -33,5 +33,7 @@
   - EvePishtuTranslatorImplanter
   - EvePishtuTranslator
   - CarshnilTranslator
+  - WawaTranslator
+  - WawaStandardTranslatorImplanter
 
   # end-backmen: languages

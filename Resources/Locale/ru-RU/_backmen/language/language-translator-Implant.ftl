@@ -42,3 +42,6 @@ ent-CarshnilTranslatorImplanter = имплант переводчик Каршн
 
 ent-EvePishtuTranslatorImplanter = имплант переводчик Ев-Пишту
     .desc = Позволяет говорить и понимать Ев-Пишту.
+
+ent-WawaStandardTranslatorImplanter = имплант переводчик языка Слизеньков
+    .desc = Позволяет говорить и понимать Вава.

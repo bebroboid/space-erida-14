@@ -8,8 +8,12 @@
   abstract: true
   components:
   # Custom names
-  - type: ReplacementAccent
-    accent: scurret
+  - type: LanguageKnowledge #backmen: languages
+    speaks:
+    - Wawa
+    understands:
+    - TauCetiBasic
+    - Wawa
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
