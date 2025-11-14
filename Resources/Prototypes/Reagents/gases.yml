@@ -30,6 +30,9 @@
       - !type:ModifyLungGas
         conditions:
         - !type:OrganType
+          type: Shadowkin # Erida shadowkins tweak
+          shouldHave: false
+        - !type:OrganType
           type: Vox
           shouldHave: false
         ratios:
@@ -75,6 +78,9 @@
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
+        - !type:OrganType
+          type: Shadowkin # Erida shadowkins tweak
+          shouldHave: false
         - !type:OrganType
           type: Vox
           shouldHave: false
@@ -210,6 +216,9 @@
         - !type:OrganType
           type: Vox
           shouldHave: false
+        - !type:OrganType
+          type: Shadowkin # Erida shadowkins tweak
+          shouldHave: false
         scaleByQuantity: true
         ignoreResistances: true
         damage:
@@ -235,6 +244,9 @@
           shouldHave: false
         - !type:OrganType
           type: Vox
+          shouldHave: false
+        - !type:OrganType
+          type: Shadowkin # Erida shadowkins tweak
           shouldHave: false
         # Don't want people to get toxin damage from the gas they just
         # exhaled, right?
@@ -285,6 +297,9 @@
       # Converts Nitrogen into CO2
       - !type:ModifyLungGas
         conditions:
+        - !type:OrganType
+          type: Shadowkin # Erida shadowkins tweak
+          shouldHave: false
         - !type:OrganType
           type: Vox
         ratios:

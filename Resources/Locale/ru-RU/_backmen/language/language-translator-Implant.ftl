@@ -31,8 +31,8 @@ ent-ValyrianStandardTranslatorImplanter = имплант переводчик В
 ent-DwarvenStandardTranslatorImplanter = имплант переводчик языка Дворфов
     .desc = Позволяет говорить и понимать язык Дворфов.
 
-ent-ShadokinStandardTranslatorImplanter = имплант переводчик языка Шадокинов
-    .desc = Позволяет говорить и понимать Шадокин.
+ent-MarStandardTranslatorImplanter = имплант переводчик языка Мар
+    .desc = Позволяет говорить и понимать Мар.
 
 ent-ElvishStandardTranslatorImplanter = имплант переводчик Эльфийского языка
     .desc = Позволяет говорить и понимать Эльфийский язык.

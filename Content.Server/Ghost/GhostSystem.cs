@@ -37,6 +37,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared._Erida.OnGhostAttemptDamage;
 
 namespace Content.Server.Ghost
 {
@@ -585,6 +586,13 @@ namespace Content.Server.Ghost
                     }
 
                     DamageSpecifier damage = new(_prototypeManager.Index(AsphyxiationDamageType), dealtDamage);
+
+                    // START-ADT-TWeak - Erida: взято с ADT
+                    if (TryComp<OnGhostAttemptDamageComponent>(playerEntity, out var damageComp))
+                    {
+                        damage = new(_prototypeManager.Index<DamageTypePrototype>(damageComp.BloodlossDamageType), dealtDamage);
+                    }
+                    // END-ADT-Tweak - Erida: взято с ADT
 
                     _damageable.TryChangeDamage(playerEntity, damage, true);
                 }

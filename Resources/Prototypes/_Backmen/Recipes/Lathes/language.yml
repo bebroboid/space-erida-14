@@ -201,8 +201,8 @@
     Silver: 5
 
 - type: latheRecipe
-  id: ShadokinTranslator
-  result: ShadokinTranslator
+  id: MarTranslator
+  result: MarTranslator
   completetime: 2
   materials:
     Steel: 200
@@ -245,8 +245,8 @@
     Silver: 50
 
 - type: latheRecipe
-  id: ShadokinStandardTranslatorImplanter
-  result: ShadokinStandardTranslatorImplanter
+  id: MarStandardTranslatorImplanter
+  result: MarStandardTranslatorImplanter
   completetime: 2
   materials:
     Steel: 500

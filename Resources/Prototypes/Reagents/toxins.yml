@@ -303,9 +303,23 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin # Erida shadowkins tweak
+          shouldHave: false
         damage:
           types:
             Asphyxiation: 5
+      # Erida shadowkins tweak
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
+            Bloodloss: 5
+      # Erida shadowkins tweak end
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10
@@ -321,9 +335,23 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin # Erida shadowkins tweak
+          shouldHave: false
         damage:
           groups:
             Airloss: 10
+      # Erida shadowkins tweak
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
+            Bloodloss: 8
+      # Erida shadowkins tweak end
 
 - type: reagent
   id: MindbreakerToxin
@@ -364,6 +392,9 @@
       # todo: cough, sneeze
       - !type:HealthChange
         conditions:
+        - !type:OrganType
+          type: Shadowkin # Erida shadowkins tweak
+          shouldHave: false
         - !type:ReagentThreshold
           min: 45
         damage:
@@ -372,6 +403,21 @@
             Airloss: 2
           types:
             Poison: 2
+      # Erida shadowkins tweak
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
+          shouldHave: true
+        - !type:ReagentThreshold
+          min: 45
+        damage:
+          groups:
+            Brute: 2
+          types:
+            Poison: 2
+            Bloodloss: 2
+      # Erida shadowkins tweak end
       - !type:PopupMessage
         type: Local
         messages: [ "histamine-effect-light-itchiness" ]
@@ -410,6 +456,20 @@
         conditions:
           - !type:OrganType
             type: Animal
+      # Erida shadowkins tweak
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
+        damage:
+          types:
+            Poison: 0.4
+      - !type:ChemVomit
+        probability: 0.04
+        conditions:
+          - !type:OrganType
+            type: Shadowkin
+      # Erida shadowkins tweak end
 
 - type: reagent
   id: Amatoxin
@@ -479,6 +539,9 @@
           - !type:OrganType
             type: Vox
             shouldHave: false
+          - !type:OrganType
+            type: Shadowkin # Erida shadowkins tweak
+            shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
@@ -492,6 +555,9 @@
           - !type:OrganType
             type: Vox
             shouldHave: false
+          - !type:OrganType
+            type: Shadowkin # Erida shadowkins tweak
+            shouldHave: false
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -500,6 +566,9 @@
         - !type:OrganType
           type: Vox
           shouldHave: false
+        - !type:OrganType
+          type: Shadowkin # Erida shadowkins tweak
+          shouldHave: false
         damage:
           types:
             Poison: 1
@@ -507,6 +576,8 @@
         conditions:
         - !type:OrganType
           type: Animal
+        - !type:OrganType
+          type: Shadowkin # Erida shadowkins tweak
         reagent: Protein
         amount: 0.5
       - !type:AdjustReagent
@@ -634,9 +705,23 @@
         walkSpeedModifier: 0.8
         sprintSpeedModifier: 0.8
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin # Erida shadowkins tweak
+          shouldHave: false
         damage:
           groups:
             Airloss: 2
+      # Erida shadowkins tweak
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
+            Bloodloss: 2
+      # Erida shadowkins tweak end
 
 - type: reagent
   id: Tazinide
