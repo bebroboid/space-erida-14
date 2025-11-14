@@ -322,3 +322,20 @@
     requires:
     - TauCetiBasic
     - Shark
+
+- type: entity
+  id: WawaTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Wawa translator
+  description: Translates speech between Wawa and Tau-Ceti Basic. For talking to Shadowkin!
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - Wawa
+    understood:
+    - TauCetiBasic
+    - Wawa
+    requires:
+    - TauCetiBasic
+    - Wawa
