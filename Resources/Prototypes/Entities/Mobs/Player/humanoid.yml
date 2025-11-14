@@ -10,7 +10,7 @@
 
 - type: randomHumanoidSettings
   id: EventHumanoidMindShielded
-  parent: EventHumanoid
+  parent: EventHumanoidAlt # CentComm ivent roles
   components:
     - type: AutoImplant
       implants:

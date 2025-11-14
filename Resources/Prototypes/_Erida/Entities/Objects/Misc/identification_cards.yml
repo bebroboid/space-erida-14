@@ -1,0 +1,134 @@
+- type: entity
+  parent: IDCardStandard
+  id: CoSCCIDCard
+  categories: [ HideSpawnMenu ]
+  name: centcom chief of staff ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: ChiefOfStaffCentralCommand
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomOfficerIDCard
+  categories: [ HideSpawnMenu ]
+  name: centcom officer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomOperatorIDCard
+  categories: [ HideSpawnMenu ]
+  name: centcom operator ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandOperator
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomIntendantIDCard
+  categories: [ HideSpawnMenu ]
+  name: centcom intendant ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandIntendant
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomEngineerIDCard
+  categories: [ HideSpawnMenu ]
+  name: centcom engineer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandEngineer
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomClercIDCard
+  categories: [ HideSpawnMenu ]
+  name: centcom clerc ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandClerc
+
+- type: entity
+  parent: IDCardStandard
+  id: OSOIDCard
+  categories: [ HideSpawnMenu ]
+  name: OSO ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: OSO
+
+- type: entity
+  parent: IDCardStandard
+  id: CentralCommandHoSIDCard
+  categories: [ HideSpawnMenu ]
+  name: Central Command HoS ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandHoS
+
+- type: entity
+  parent: IDCardStandard
+  id: CentralCommandSecIDCard
+  categories: [ HideSpawnMenu ]
+  name: Central Command Security ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandSecurity
