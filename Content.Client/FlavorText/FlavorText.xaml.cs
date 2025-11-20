@@ -19,6 +19,12 @@ namespace Content.Client.FlavorText
         public Action<string>? OnLinksTextChanged;
         public Action<string>? OnNSFWTextChanged;
         // Orion-End
+        // Erida start
+        public Action<int>? OnFlavorTabChanged;
+        public Action<string>? OnNSFWLinksTextChanged;
+        public Action<string>? OnNSFWFlavorOOCTextChanged;
+        public Action<string>? OnNSFWTagsTextChanged;
+        // Erida end
 
         public FlavorText()
         {
@@ -33,7 +39,8 @@ namespace Content.Client.FlavorText
             FlavorTabs.SetTabTitle(2, Loc.GetString("flavor-tab-ooc-flavor"));
             FlavorTabs.SetTabTitle(3, Loc.GetString("flavor-tab-gyr"));
             FlavorTabs.SetTabTitle(4, Loc.GetString("flavor-tab-nsfw"));
-            FlavorTabs.SetTabTitle(5, Loc.GetString("flavor-tab-preview"));
+            FlavorTabs.SetTabTitle(5, Loc.GetString("flavor-tab-nsfw-ooc-flavor")); // Erida edit
+            FlavorTabs.SetTabTitle(6, Loc.GetString("flavor-tab-preview"));
 
             PreviewTabs.SetTabTitle(0, Loc.GetString("flavor-tab-flavor"));
             PreviewTabs.SetTabTitle(1, Loc.GetString("flavor-tab-character"));
@@ -67,6 +74,18 @@ namespace Content.Client.FlavorText
             CNSFWTextInput.Placeholder = new Rope.Leaf(loc.GetString("nsfw-flavor-text-placeholder"));
             CNSFWTextInput.OnTextChanged += _ => NSFWTextChanged();
             // Orion-End
+            // Erida start
+            CFlavorNSFWOOCTextInput.Placeholder = new Rope.Leaf(loc.GetString("ooc-flavor-text-placeholder"));
+            CFlavorNSFWOOCTextInput.OnTextChanged += _ => FlavorNSFWOOCTextChanged();
+
+            CNSFWLinksTextInput.Placeholder = new Rope.Leaf(loc.GetString("links-flavor-text-placeholder"));
+            CNSFWLinksTextInput.OnTextChanged += _ => NSFWLinksTextChanged();
+
+            CNSFWTagsTextInput.Placeholder = new Rope.Leaf(loc.GetString("tags-flavor-text-placeholder"));
+            CNSFWTagsTextInput.OnTextChanged += _ => NSFWTagsTextChanged();
+
+            PreviewTabs.OnTabChanged += FlavorTabChanged;
+            // Erida end
         }
 
         public void FlavorTextChanged()
@@ -115,5 +134,26 @@ namespace Content.Client.FlavorText
             OnNSFWTextChanged?.Invoke(Rope.Collapse(CNSFWTextInput.TextRope).Trim());
         }
         // Orion-End
+        // Erida start
+        public void FlavorTabChanged(int tab)
+        {
+            OnFlavorTabChanged?.Invoke(tab);
+        }
+
+        public void FlavorNSFWOOCTextChanged()
+        {
+            OnNSFWFlavorOOCTextChanged?.Invoke(Rope.Collapse(CFlavorNSFWOOCTextInput.TextRope).Trim());
+        }
+
+        public void NSFWLinksTextChanged()
+        {
+            OnNSFWLinksTextChanged?.Invoke(Rope.Collapse(CNSFWLinksTextInput.TextRope).Trim());
+        }
+
+        public void NSFWTagsTextChanged()
+        {
+            OnNSFWTagsTextChanged?.Invoke(Rope.Collapse(CNSFWTagsTextInput.TextRope).Trim());
+        }
+        // Erida end
     }
 }

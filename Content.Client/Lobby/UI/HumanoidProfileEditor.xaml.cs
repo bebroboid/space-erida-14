@@ -69,6 +69,11 @@ namespace Content.Client.Lobby.UI
         private TextEdit? _linksTextEdit;
         private TextEdit? _nsfwTextEdit;
         // Orion-End
+        // Erida start
+        private TextEdit? _nsfwLinksTextEdit;
+        private TextEdit? _flavorTextNSFWOOCEdit;
+        private TextEdit? _nsfwTagsTextEdit;
+        // Erida end
 
         // One at a time.
         private LoadoutWindow? _loadoutWindow;
@@ -492,6 +497,11 @@ namespace Content.Client.Lobby.UI
                 TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
 
                 _flavorTextEdit = _flavorText.CFlavorTextInput;
+                // Erida start
+                _flavorTextNSFWOOCEdit = _flavorText.CFlavorNSFWOOCTextInput;
+                _nsfwLinksTextEdit = _flavorText.CNSFWLinksTextInput;
+                _nsfwTagsTextEdit = _flavorText.CNSFWTagsTextInput;
+                // Erida end
                 // Orion-Start
                 _flavorTextOOCEdit = _flavorText.CFlavorOOCTextInput;
                 _characterTextEdit = _flavorText.CCharacterTextInput;
@@ -516,6 +526,12 @@ namespace Content.Client.Lobby.UI
                 _flavorText.OnLinksTextChanged += OnLinksFlavorTextChange;
                 _flavorText.OnNSFWTextChanged += OnNSFWFlavorTextChange;
                 // Orion-End
+                // Erida start
+                _flavorText.OnNSFWLinksTextChanged += OnNSFWLinksFlavorTextChange;
+                _flavorText.OnNSFWFlavorOOCTextChanged += OnFlavorNSFWOOCTextChange;
+                _flavorText.OnNSFWTagsTextChanged += OnNSFWTagsFlavorTextChange;
+                _flavorText.OnFlavorTabChanged += OnTabChanged;
+                // Erida end
             }
             else
             {
@@ -533,6 +549,12 @@ namespace Content.Client.Lobby.UI
                 _flavorText.OnLinksTextChanged -= OnLinksFlavorTextChange;
                 _flavorText.OnNSFWTextChanged -= OnNSFWFlavorTextChange;
                 // Orion-End
+                // Erida start
+                _flavorText.OnNSFWLinksTextChanged -= OnNSFWLinksFlavorTextChange;
+                _flavorText.OnNSFWFlavorOOCTextChanged -= OnFlavorNSFWOOCTextChange;
+                _flavorText.OnNSFWTagsTextChanged -= OnNSFWTagsFlavorTextChange;
+                _flavorText.OnFlavorTabChanged -= OnTabChanged;
+                // Erida end
 
                 TabContainer.RemoveChild(_flavorText);
                 _flavorText.Dispose();
@@ -549,13 +571,50 @@ namespace Content.Client.Lobby.UI
                 _linksTextEdit = null;
                 _nsfwTextEdit = null;
                 // Orion-End
+                // Erida start
+                _nsfwLinksTextEdit = null;
+                _flavorTextNSFWOOCEdit = null;
+                _nsfwTagsTextEdit = null;
+                // Erida end
 
                 _flavorText = null;
             }
         }
 
+        // Erida start
+        private void UpdateNSFWPreviewVisibility(bool showNsfw)
+        {
+            if (_flavorText == null)
+                return;
+
+            if (_flavorText.PreviewOOCText.Visible == !showNsfw)
+                return;
+
+            _flavorText!.PreviewOOCText.Visible = !showNsfw;
+            _flavorText!.PreviewNSFWOOCText.Visible = showNsfw;
+
+            _flavorText!.PreviewLinksContainer.Visible = !showNsfw;
+            _flavorText!.PreviewNSFWLinksContainer.Visible = showNsfw;
+
+            _flavorText!.PreviewTagsText.Visible = !showNsfw;
+            _flavorText!.PreviewNSFWTagsText.Visible = showNsfw;
+        }
+        private void OnTabChanged(int tab)
+        {
+            switch (tab)
+            {
+                case 3:
+                    UpdateNSFWPreviewVisibility(true);
+                    break;
+                default:
+                    UpdateNSFWPreviewVisibility(false);
+                    break;
+            }
+        }
+        // Erida end
+
         // Orion-Start
-                private void UpdateFlavorPreview()
+        private void UpdateFlavorPreview()
         {
             if (_flavorText == null || Profile == null)
                 return;
@@ -565,7 +624,12 @@ namespace Content.Client.Lobby.UI
             _flavorText.PreviewOOCText.SetMessage(Profile.OOCFlavorText);
             _flavorText.PreviewTagsText.Text = Profile.TagsFlavorText;
 
-            ProcessLinks(Profile.LinksFlavorText);
+            // Erida edit start
+            _flavorText.PreviewNSFWOOCText.SetMessage(Profile.NSFWOOCFlavorText);
+            _flavorText.PreviewNSFWTagsText.Text = Profile.NSFWTagsFlavorText;
+            ProcessLinks(Profile.LinksFlavorText, _flavorText.PreviewLinksContainer);
+            ProcessLinks(Profile.NSFWLinksFlavorText, _flavorText.PreviewNSFWLinksContainer);
+            // Erida end
 
             _flavorText.PreviewGYRContainer.RemoveAllChildren();
             CreateGYRBigTextLabel(Loc.GetString($"humanoid-profile-editor-gyr-green"), Color.Green);
@@ -609,12 +673,12 @@ namespace Content.Client.Lobby.UI
             _flavorText?.PreviewGYRContainer.AddChild(label);
         }
 
-        private void ProcessLinks(string linksText)
+        private void ProcessLinks(string linksText, BoxContainer linksContainer)
         {
-            if (_flavorText?.PreviewLinksContainer == null)
+            if (linksContainer == null)
                 return;
 
-            _flavorText.PreviewLinksContainer.RemoveAllChildren();
+            linksContainer.RemoveAllChildren();
             if (string.IsNullOrEmpty(linksText))
                 return;
 
@@ -623,11 +687,11 @@ namespace Content.Client.Lobby.UI
             {
                 if (IsValidUrl(link))
                 {
-                    CreateLinkButton(link);
+                    CreateLinkButton(link, linksContainer); // Erida edit
                 }
                 else
                 {
-                    CreateLinkTextLabel(link);
+                    CreateLinkTextLabel(link, linksContainer); // Erida edit
                 }
             }
         }
@@ -639,7 +703,7 @@ namespace Content.Client.Lobby.UI
                 url.StartsWith("www.", StringComparison.OrdinalIgnoreCase);
         }
 
-        private void CreateLinkButton(string url)
+        private void CreateLinkButton(string url, BoxContainer linksContainer) // Erida edit
         {
             var button = new Button
             {
@@ -652,10 +716,10 @@ namespace Content.Client.Lobby.UI
 
             button.OnPressed += _ => OpenLink(url);
 
-            _flavorText?.PreviewLinksContainer.AddChild(button);
+            linksContainer.AddChild(button); // Erida edit
         }
 
-        private void CreateLinkTextLabel(string text)
+        private void CreateLinkTextLabel(string text, BoxContainer linksContainer) // Erida edit
         {
             var label = new Label
             {
@@ -665,7 +729,7 @@ namespace Content.Client.Lobby.UI
                 FontColorOverride = Color.Gray
             };
 
-            _flavorText?.PreviewLinksContainer.AddChild(label);
+            linksContainer.AddChild(label); // Erida edit
         }
 
         private string GetLinkDisplayText(string url)
@@ -1372,6 +1436,40 @@ namespace Content.Client.Lobby.UI
             UpdateFlavorPreview();
         }
         // Orion-End
+        // Erida start
+        private void OnFlavorNSFWOOCTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithNSFWOOCFlavorText(content);
+            SetDirty();
+
+            UpdateFlavorPreview();
+        }
+
+        private void OnNSFWLinksFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithNSFWLinksText(content);
+            SetDirty();
+
+            UpdateFlavorPreview();
+        }
+
+        private void OnNSFWTagsFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithNSFWTagsText(content);
+            SetDirty();
+
+            UpdateFlavorPreview();
+        }
+        // Erida end
 
         private void OnMarkingChange(MarkingSet markings)
         {
@@ -1611,6 +1709,20 @@ namespace Content.Client.Lobby.UI
             {
                 _nsfwTextEdit.TextRope = new Rope.Leaf(Profile?.NSFWFlavorText ?? "");
             }
+            // Erida start
+            if (_flavorTextNSFWOOCEdit != null)
+            {
+                _flavorTextNSFWOOCEdit.TextRope = new Rope.Leaf(Profile?.NSFWOOCFlavorText ?? "");
+            }
+            if (_nsfwLinksTextEdit != null)
+            {
+                _nsfwLinksTextEdit.TextRope = new Rope.Leaf(Profile?.NSFWLinksFlavorText ?? "");
+            }
+            if (_nsfwTagsTextEdit != null)
+            {
+                _nsfwTagsTextEdit.TextRope = new Rope.Leaf(Profile?.NSFWTagsFlavorText ?? "");
+            }
+            // Erida end
         }
         // Orion-Edit-End
 

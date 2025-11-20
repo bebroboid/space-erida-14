@@ -34,6 +34,16 @@ public sealed partial class DetailExaminableComponent : Component
     [DataField, AutoNetworkedField]
     public string NSFWContent { get; set; } = string.Empty;
 
+    // Erida start
+    [DataField, AutoNetworkedField]
+    public string NSFWOOCContent { get; set; } = string.Empty;
+
+    [DataField, AutoNetworkedField]
+    public string NSFWLinksContent { get; set; } = string.Empty;
+
+    [DataField, AutoNetworkedField]
+    public string NSFWTagsContent { get; set; } = string.Empty;
+    // Erida end
     public void SetProfile(HumanoidCharacterProfile profile)
     {
         Content = profile.FlavorText;
@@ -45,6 +55,11 @@ public sealed partial class DetailExaminableComponent : Component
         YellowContent = profile.YellowFlavorText;
         RedContent = profile.RedFlavorText;
         NSFWContent = profile.NSFWFlavorText;
+        // Erida start
+        NSFWOOCContent = profile.NSFWOOCFlavorText;
+        NSFWLinksContent = profile.NSFWLinksFlavorText;
+        NSFWTagsContent = profile.NSFWTagsFlavorText;
+        // Erida end
     }
     // Orion-End
 }

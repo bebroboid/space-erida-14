@@ -39,6 +39,7 @@ public sealed partial class DetailExaminableWindow : FancyWindow
 
         RotateLeftButton.OnPressed += _ => RotateDirection(-1);
         RotateRightButton.OnPressed += _ => RotateDirection(1);
+        PreviewTabs.OnTabChanged += OnTabChanged; // Erida edit
     }
 
     private void RotateDirection(int step)
@@ -46,6 +47,46 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         _currentDirectionIndex = (_currentDirectionIndex + step + _rotationSequence.Count) % _rotationSequence.Count;
         UpdateSpriteDirection();
     }
+
+    // Erida start
+    private void UpdateNSFWPreviewVisibility(bool toggleNsfw)
+    {
+        // Return if nothing changes
+        if (PreviewTagsText.Visible == !toggleNsfw)
+            return;
+
+        var config = IoCManager.Resolve<IConfigurationManager>();
+        var showLinks = config.GetCVar(CCVars.FlavorLinksEnabled);
+        var showOOC = config.GetCVar(CCVars.FlavorOocEnabled);
+
+        if (showLinks)
+        {
+            PreviewLinksContainer.Visible = !toggleNsfw;
+            PreviewNSFWLinksContainer.Visible = toggleNsfw;
+        }
+        if (showOOC)
+        {
+            PreviewOOCText.Visible = !toggleNsfw;
+            PreviewNSFWOOCText.Visible = toggleNsfw;
+        }
+
+        PreviewTagsText.Visible = !toggleNsfw;
+        PreviewNSFWTagsText.Visible = toggleNsfw;
+    }
+
+    private void OnTabChanged(int tab)
+    {
+        switch (tab)
+        {
+            case 3:
+                UpdateNSFWPreviewVisibility(true);
+                break;
+            default:
+                UpdateNSFWPreviewVisibility(false);
+                break;
+        }
+    }
+    // Erida end
 
     private void UpdateSpriteDirection()
     {
@@ -58,7 +99,7 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         {
             OverrideDirection = _rotationSequence[_currentDirectionIndex],
             Scale = new Vector2(8f, 8f),
-//            MaxSize = new Vector2(64, 256), // This killing 32x48* sprites
+            // MaxSize = new Vector2(64, 256), // This killing 32x48* sprites
             MinSize = new Vector2(32, 128),
             Stretch = SpriteView.StretchMode.Fit,
         };
@@ -105,7 +146,13 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         PreviewAppearanceText.SetMessage(GetContentWithEmptyMessage(state.FlavorText, "detail-examinable-empty-flavor"));
 
         if (showOoc)
+        {
             PreviewOOCText.SetMessage(GetContentWithEmptyMessage(state.OOCFlavorText, "detail-examinable-empty-ooc"));
+
+            // Erida edit
+            if (showNsfw)
+                PreviewNSFWOOCText.SetMessage(GetContentWithEmptyMessage(state.NSFWOOCFlavorText, "detail-examinable-empty-ooc"));
+        }
 
         if (showTraits)
             PreviewTraitsText.SetMessage(GetContentWithEmptyMessage(state.CharacterFlavorText, "detail-examinable-empty-character"));
@@ -128,14 +175,20 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         }
 
         PreviewTagsText.Text = state.TagsFlavorText;
+        PreviewNSFWTagsText.Text = state.NSFWTagsFlavorText; // Erida edit
 
         if (showLinks)
         {
-            ProcessLinks(state.LinksFlavorText);
+            ProcessLinks(state.LinksFlavorText, PreviewLinksContainer);
+
+            // Erida edit
+            if (showNsfw)
+                ProcessLinks(state.NSFWLinksFlavorText, PreviewNSFWLinksContainer);
         }
         else // TODO: Remove all container, now its just remove links
         {
             PreviewLinksContainer?.RemoveAllChildren();
+            PreviewNSFWLinksContainer?.RemoveAllChildren(); // Erida edit
         }
 
         Badge.Visible = PlayerBadge();
@@ -160,12 +213,12 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         PreviewGYRContainer.AddChild(label);
     }
 
-    private void ProcessLinks(string linksText)
+    private void ProcessLinks(string linksText, BoxContainer linksContainer) // Erida edit
     {
-        if (PreviewLinksContainer == null)
+        if (linksContainer == null) // Erida edit
             return;
 
-        PreviewLinksContainer.RemoveAllChildren();
+        linksContainer.RemoveAllChildren(); // Erida edit
         if (string.IsNullOrEmpty(linksText))
         {
             var emptyLabel = new Label
@@ -175,7 +228,7 @@ public sealed partial class DetailExaminableWindow : FancyWindow
                 HorizontalAlignment = HAlignment.Center,
                 FontColorOverride = Color.Gray
             };
-            PreviewLinksContainer.AddChild(emptyLabel);
+            linksContainer.AddChild(emptyLabel); // Erida edit
             return;
         }
 
@@ -184,11 +237,11 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         {
             if (IsValidUrl(link))
             {
-                CreateLinkButton(link);
+                CreateLinkButton(link, linksContainer); // Erida edit
             }
             else
             {
-                CreateLinkTextLabel(link);
+                CreateLinkTextLabel(link, linksContainer); // Erida edit
             }
         }
     }
@@ -215,7 +268,7 @@ public sealed partial class DetailExaminableWindow : FancyWindow
             url.StartsWith("https://cdn.discordapp.com/attachments", StringComparison.OrdinalIgnoreCase);
     }
 
-    private void CreateLinkButton(string url)
+    private void CreateLinkButton(string url, BoxContainer linksContainer) // Erida edit
     {
         var button = new Button
         {
@@ -228,10 +281,10 @@ public sealed partial class DetailExaminableWindow : FancyWindow
 
         button.OnPressed += _ => OpenLink(url);
 
-        PreviewLinksContainer.AddChild(button);
+        linksContainer.AddChild(button); // Erida edit
     }
 
-    private void CreateLinkTextLabel(string text)
+    private void CreateLinkTextLabel(string text, BoxContainer linksContainer) // Erida edit
     {
         var label = new Label
         {
@@ -241,7 +294,7 @@ public sealed partial class DetailExaminableWindow : FancyWindow
             FontColorOverride = Color.Gray,
         };
 
-        PreviewLinksContainer.AddChild(label);
+        linksContainer.AddChild(label); // Erida edit
     }
 
     private static string GetLinkDisplayText(string url)

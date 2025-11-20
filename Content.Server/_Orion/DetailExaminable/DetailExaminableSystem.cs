@@ -75,7 +75,12 @@ public sealed class DetailExaminableSystem : EntitySystem
             detail.RedContent,
             detail.TagsContent,
             detail.LinksContent,
-            detail.NSFWContent
+            detail.NSFWContent,
+            // Erida start
+            detail.NSFWOOCContent,
+            detail.NSFWLinksContent,
+            detail.NSFWTagsContent
+            // Erida end
         );
 
         var window = new DetailExaminableEui(state);

@@ -3,6 +3,7 @@ flavor-tab-character = Черты персонажа
 flavor-tab-ooc-flavor = OOC Заметки
 flavor-tab-gyr = Предпочтения
 flavor-tab-nsfw = NSFW
+flavor-tab-nsfw-ooc-flavor = NSFW OOC
 flavor-tab-preview = Предпросмотр
 
 detail-examinable-window-title = Подробности

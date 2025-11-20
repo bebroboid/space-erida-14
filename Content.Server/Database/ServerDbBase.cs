@@ -286,6 +286,11 @@ namespace Content.Server.Database
                 profile.LinksFlavorText,
                 profile.NSFWFlavorText,
                 // Orion-End
+                // Erida start
+                profile.NSFWOOCFlavorText,
+                profile.NSFWLinksFlavorText,
+                profile.NSFWTagsFlavorText,
+                // Erida end
                 profile.Species,
                 voice, // Corvax-TTS
                 profile.Age,
@@ -333,6 +338,11 @@ namespace Content.Server.Database
             profile.LinksFlavorText = humanoid.LinksFlavorText;
             profile.NSFWFlavorText = humanoid.NSFWFlavorText;
             // Orion-End
+            // Erida start
+            profile.NSFWLinksFlavorText = humanoid.NSFWLinksFlavorText;
+            profile.NSFWOOCFlavorText = humanoid.NSFWOOCFlavorText;
+            profile.NSFWTagsFlavorText = humanoid.NSFWTagsFlavorText;
+            // Erida end
             profile.Species = humanoid.Species;
             profile.Voice = humanoid.Voice; // Corvax-TTS
             profile.Age = humanoid.Age;

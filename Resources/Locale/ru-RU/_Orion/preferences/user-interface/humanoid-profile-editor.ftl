@@ -1,6 +1,7 @@
 humanoid-profile-editor-flavor-label = Внешний Вид
 humanoid-profile-editor-flavor-character-label = Черты характера и стиль общения
 humanoid-profile-editor-flavor-ooc-label = OOC Заметки
+humanoid-profile-editor-flavor-nsfw-ooc-label = NSFW OOC заметки
 humanoid-profile-editor-flavor-tags-label = Теги персонажа (через запятую)
 humanoid-profile-editor-flavor-links-label = Ссылки на арты, лор и другие материалы
 humanoid-profile-editor-flavor-links-label-preview = Ссылки
