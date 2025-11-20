@@ -3943,3 +3943,10 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Dog
+    understands:
+    - TauCetiBasic
+    - Dog
