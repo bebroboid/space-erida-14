@@ -99,11 +99,6 @@
   metabolisms:
     Narcotic:
       effects:
-      - !type:ModifyStatusEffect # Erida
-        effectProto: StatusEffectSeeingRainbow
-        time: 35
-        type: Add
-        refresh: false
       - !type:MovespeedModifier # Erida
         walkSpeedModifier: 1.13
         sprintSpeedModifier: 1.13
@@ -113,7 +108,7 @@
           type: Shadowkin # Erida shadowkins tweak
           shouldHave: false
         - !type:ReagentThreshold
-          min: 20
+          min: 12 # Erida
         damage:
           types:
             Poison: 2 # this is added to the base damage of the meth.

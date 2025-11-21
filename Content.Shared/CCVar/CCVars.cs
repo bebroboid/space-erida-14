@@ -66,5 +66,5 @@ public sealed partial class CCVars : CVars
     // The smaller the value, the faster the modifier will decrease after the threshold.
     // <summary>
     public static readonly CVarDef<int> SpeedModifierThresholdStrength =
-         CVarDef.Create("speed.modifier_threshold_strength", -3, CVar.SERVER);
+         CVarDef.Create("speed.modifier_threshold_strength", -4, CVar.SERVER);
 }
