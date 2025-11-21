@@ -76,6 +76,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly ChatProtectionSystem _chatProtection = default!; // Orion
+    [Dependency] private readonly ChatBrainRotSystem _brainRotSystem = default!; // Erida
 
     // Corvax-TTS-Start: Moved from Server to Shared
     // public const int VoiceRange = 10; // how far voice goes in world units
@@ -213,6 +214,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (_chatProtection.CheckICMessage(message, source))
             return;
         // Orion-End
+
+        _brainRotSystem.CheckBrainRot(source, message); // Erida-change
 
         // Sus
         if (player?.AttachedEntity is { Valid: true } entity && source != entity)
@@ -446,6 +449,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (_chatProtection.CheckICMessage(message, source))
             return;
         // Orion-End
+
+        _brainRotSystem.CheckBrainRot(source, message); // Erida-change
 
         var filter = _stationSystem.GetInStation(stationDataComp);
 

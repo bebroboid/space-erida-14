@@ -52,3 +52,18 @@
   - "опг рыбное"
   - "nabeg"
   - "nabeb"
+
+# Erida-start
+- type: chatProtectionList
+  id: BrainRotWords
+  words:
+  - щиткур
+  - щиткуры
+  - окак
+  - рп
+  - плазмафлуд
+  - гойда
+  - лрп
+  - мрп
+  - хрп
+# Erida-end
