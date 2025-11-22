@@ -40,8 +40,7 @@ public sealed partial class ChatBrainRotSystem : EntitySystem
         if (!_cacheDone)
             UpdateBrainrotWords();
 
-        var splittedMessage = message.ToLower().Split(' ').ToHashSet();
-        foreach (var word in _brainrotWords.Where(word => splittedMessage.Contains(word)))
+        foreach (var word in _brainrotWords.Where(word => message.Contains(word, StringComparison.OrdinalIgnoreCase)))
         {
             HandleViolation(entity, word);
             return;
