@@ -66,6 +66,8 @@
             #silicon (3)
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
+            #law
+            IAA: [ 1, 1]
         - type: StationGoal
           goals:
           - Singularity

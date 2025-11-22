@@ -2,7 +2,7 @@
   id: BackmenBox
   mapName: 'Federation Box'
   mapPath: /Maps/Erida/box.yml
-  minPlayers: 8 # Erida
+  minPlayers: 0
   stations:
     Boxstation:
       stationProto: StandardNanotrasenStation
@@ -67,6 +67,8 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 3, 3 ]
+            #law
+            IAA: [ 1, 1]
         - type: StationGoal
           goals:
           - Singularity

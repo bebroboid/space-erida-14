@@ -40,6 +40,7 @@ namespace Content.Server.Voting.Managers
             {StandardVoteType.Map, CCVars.VoteMapEnabled},
             {StandardVoteType.Votekick, CCVars.VotekickEnabled}
         };
+        private Dictionary<string, int> _cooldownMaps = new(); // Erida
 
         public void CreateStandardVote(ICommonSession? initiator, StandardVoteType voteType, string[]? args = null)
         {
@@ -279,7 +280,8 @@ namespace Content.Server.Voting.Managers
 
             foreach (var (k, v) in maps)
             {
-                options.Options.Add((v, k));
+                if (!_cooldownMaps.ContainsKey(k.ID)) // Erida
+                    options.Options.Add((v, k));
             }
 
             WirePresetVoteInitiator(options, initiator);
@@ -303,6 +305,7 @@ namespace Content.Server.Voting.Managers
                 }
 
                 _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Map vote finished: {picked.MapName}");
+                _cooldownMaps.Add(picked.ID, _cfg.GetCVar(CCVars.MapHideDuration)); // Erida
                 var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
                 if (ticker.CanUpdateMap())
                 {
@@ -603,6 +606,17 @@ namespace Content.Server.Voting.Managers
                 presets[preset.ID] = preset.ModeTitle;
             }
             return presets;
+        }
+
+        public void DecreaseMapCooldowns()
+        {
+            foreach (var map in _cooldownMaps)
+            {
+                _cooldownMaps[map.Key] -= 1;
+
+                if (_cooldownMaps[map.Key] <= 0)
+                    _cooldownMaps.Remove(map.Key);
+            }
         }
     }
 }

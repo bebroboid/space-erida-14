@@ -2,7 +2,7 @@
   id: Loop_Erida
   mapName: 'Loop Station'
   mapPath: /Maps/Erida/loop.yml
-  minPlayers: 35
+  minPlayers: 0
   maxPlayers: 70
   stations:
     Loop:
@@ -65,6 +65,8 @@
             #silicon (3 - 4)
             StationAi: [ 1, 1 ]
             Borg: [ 2, 3 ]
+            #law
+            IAA: [ 1, 1]
         - type: StationGoal
           goals:
           - Singularity
