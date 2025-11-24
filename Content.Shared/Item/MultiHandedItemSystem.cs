@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory.VirtualItem;
