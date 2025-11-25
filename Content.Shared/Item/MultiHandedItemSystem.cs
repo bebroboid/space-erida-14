@@ -26,7 +26,7 @@ public sealed class MultiHandedItemSystem : EntitySystem
     {
         for (var i = 0; i < ent.Comp.HandsNeeded - 1; i++)
         {
-            _virtualItem.TrySpawnVirtualItemInHand(ent.Owner, args.User);
+            _virtualItem.TrySpawnVirtualItemInHand(ent.Owner, args.User, true); // Erida edit
         }
     }
 
