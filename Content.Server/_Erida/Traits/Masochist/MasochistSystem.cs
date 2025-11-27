@@ -12,10 +12,10 @@ public sealed class MasochistSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<MasochistComponent, DamageChangedEvent>(OnDamageExamine);
+        SubscribeLocalEvent<MasochistComponent, DamageChangedEvent>(OnDamageChanged);
     }
 
-    public void OnDamageExamine(Entity<MasochistComponent> ent, ref DamageChangedEvent args)
+    public void OnDamageChanged(Entity<MasochistComponent> ent, ref DamageChangedEvent args)
     {
         if (!args.DamageIncreased || args.DamageDelta == null)
             return;
