@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: ADTDumbbell2
-  name: гантеля
-  description: Гантеля 2 кг. Кажется, пахнет потом.
+  name: dumbbell
+  description: 2 kg dumbbell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/dumbbell.rsi
@@ -18,8 +18,8 @@
 - type: entity
   parent: BaseItem
   id: ADTDumbbell5
-  name: гантеля
-  description: Гантеля 5 кг. Кажется, пахнет потом.
+  name: dumbbell
+  description: 5 kg dumbbell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/dumbbell.rsi
@@ -35,8 +35,8 @@
 - type: entity
   parent: BaseItem
   id: ADTDumbbell8
-  name: гантеля
-  description: Гантеля 8 кг. Кажется, пахнет потом.
+  name: dumbbell
+  description: 8 kg dumbbell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/dumbbell.rsi
@@ -52,8 +52,8 @@
 - type: entity
   parent: BaseItem
   id: ADTDumbbell10
-  name: гантеля
-  description: Гантеля 10 кг. Кажется, пахнет потом.
+  name: dumbbell
+  description: 10 kg dumbbell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/dumbbell.rsi
@@ -69,8 +69,8 @@
 - type: entity
   parent: BaseItem
   id: ADTDumbbell15
-  name: гантеля
-  description: Гантеля 15 кг. Кажется, пахнет потом.
+  name: dumbbell
+  description: 15 kg dumbbell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/dumbbell.rsi
@@ -86,8 +86,8 @@
 - type: entity
   parent: BaseItem
   id: ADTDumbbell20
-  name: гантеля
-  description: Гантеля 20 кг. Кажется, пахнет потом.
+  name: dumbbell
+  description: 20 kg dumbbell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/dumbbell.rsi
@@ -103,8 +103,8 @@
 - type: entity
   parent: BaseItem
   id: ADTKettlebell5
-  name: гиря
-  description: Гиря 5 кг. Кажется, пахнет потом.
+  name: kettlebell
+  description: 5 kg kettlebell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/kettlebell.rsi
@@ -120,8 +120,8 @@
 - type: entity
   parent: BaseItem
   id: ADTKettlebell10
-  name: гиря
-  description: Гиря 10 кг. Кажется, пахнет потом.
+  name: kettlebell
+  description: 10 kg kettlebell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/kettlebell.rsi
@@ -137,8 +137,8 @@
 - type: entity
   parent: BaseItem
   id: ADTKettlebell15
-  name: гиря
-  description: Гиря 15 кг. Кажется, пахнет потом.
+  name: kettlebell
+  description: 15 kg kettlebell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/kettlebell.rsi
@@ -154,8 +154,8 @@
 - type: entity
   parent: BaseItem
   id: ADTKettlebell20
-  name: гиря
-  description: Гиря 20 кг. Кажется, пахнет потом.
+  name: kettlebell
+  description: 20 kg kettlebell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/kettlebell.rsi
@@ -171,8 +171,8 @@
 - type: entity
   parent: BaseItem
   id: ADTKettlebell25
-  name: гиря
-  description: Гиря 25 кг. Кажется, пахнет потом.
+  name: kettlebell
+  description: 25 kg kettlebell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/kettlebell.rsi
@@ -188,8 +188,8 @@
 - type: entity
   parent: BaseItem
   id: ADTKettlebell30
-  name: гиря
-  description: Гиря 30 кг. Кажется, пахнет потом.
+  name: kettlebell
+  description: 30 kg kettlebell. It seems to smell like sweat.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Fun/sportinventory/kettlebell.rsi
