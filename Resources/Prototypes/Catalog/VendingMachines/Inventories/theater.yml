@@ -72,6 +72,11 @@
     ClothingNeckCloakSanabiCloak: 1
     ClothingUniformArbitr: 1
     ClothingNeckCloakArbiter: 1
+    ClothingKimonoPink: 1
+    ClothingKimonoPurple: 1
+    ClothingKimonoGreen: 1
+    ClothingKimonoSky: 1
+    ClothingKimonoBlue: 1
     #Erida-End
   contrabandInventory:
     ClothingHeadHatRichard: 1
