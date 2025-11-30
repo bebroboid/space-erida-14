@@ -22,3 +22,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from LuaWorld frontier"
   source: "https://github.com/Lua-Frontier/sector-frontier-14"
+
+- files: ["speak_mrrp.ogg, speak_mrrp_ask.ogg, mrrp2.ogg"]
+  license: "CC0-1.0"
+  copyright: "Taken from https://free-sound-effects.net"
+  source: "https://free-sound-effects.net"
