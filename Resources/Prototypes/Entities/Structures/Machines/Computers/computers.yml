@@ -211,38 +211,6 @@
 
 - type: entity
   parent: BaseComputerShuttle
-  id: ComputerShuttleInteQ
-  name: InteQ shuttle console
-  description: Used to pilot a InteQ shuttle.
-  components:
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: inteqshuttle
-    - map: ["computerLayerKeys"]
-      state: inteq_key
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
-  - type: Tag
-    tags:
-      - Syndicate
-  - type: RadarConsole
-    maxRange: 384
-  - type: WorldLoader
-    radius: 1536
-  - type: PointLight
-    radius: 1.5
-    energy: 1.6
-    color: "#fda502"
-  - type: Computer
-    board: InteQShuttleConsoleCircuitboard
-
-- type: entity
-  parent: BaseComputerShuttle
   id: ComputerShuttleCargo
   name: cargo shuttle console
   description: Used to pilot the cargo shuttle.
@@ -720,7 +688,7 @@
 - type: entity
   parent: ComputerComms
   id: SyndicateComputerComms
-  name: inteq communications computer
+  name: syndicate communications computer
   description: A computer capable of remotely hacking into the station's communications systems. Using this to make an announcement will alert the station to your presence.
   components:
   - type: Sprite
