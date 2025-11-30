@@ -3094,7 +3094,7 @@ entities:
       - SurveillanceCameraSecurity
       nameSet: True
       id: Aft-Starboard
-- proto: SyndicateComputerComms
+- proto: InteQComputerComms
   entities:
   - uid: 142
     components:

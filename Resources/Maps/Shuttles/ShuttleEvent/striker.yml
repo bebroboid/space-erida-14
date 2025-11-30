@@ -1913,7 +1913,7 @@ entities:
       parent: 254
     - type: Physics
       canCollide: False
-- proto: SyndicateComputerComms
+- proto: InteQComputerComms
   entities:
   - uid: 254
     components:
