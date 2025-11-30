@@ -26,6 +26,10 @@
       heatingCoefficient: 0.8
     - type: SlotBlock
       blockList: [ UNDERWEAR ]
+    # Erida edit
+    - type: Item
+      shape:
+      - 0,0,1,0
 
 - type: entity
   parent: ClothingUnderPantsBase

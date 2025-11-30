@@ -538,6 +538,11 @@
     tags:
     - Carrot
     - Vegetable
+  # Erida start
+    - underwear
+  - type: Clothing
+    slots: UNDERWEAR
+  # Erida end
   - type: SolutionContainerManager
     solutions:
       food:
@@ -843,6 +848,11 @@
   - type: Tag
     tags:
     - Fruit
+  # Erida start
+    - underwear
+  - type: Clothing
+    slots: UNDERWEAR
+  # Erida end
 
 - type: entity
   name: potato
@@ -1074,6 +1084,11 @@
     tags:
     - Fruit
     - Vegetable
+  # Erida start
+    - underwear
+  - type: Clothing
+    slots: UNDERWEAR
+  # Erida end
 
 - type: entity
   name: apple

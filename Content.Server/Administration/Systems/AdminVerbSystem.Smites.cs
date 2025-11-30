@@ -52,6 +52,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
+using Content.Server._Erida.Speech.Components;
 
 namespace Content.Server.Administration.Systems;
 
@@ -914,6 +915,7 @@ public sealed partial class AdminVerbSystem
                 EnsureComp<SouthernAccentComponent>(args.Target);
                 EnsureComp<SpanishAccentComponent>(args.Target);
                 EnsureComp<StutteringAccentComponent>(args.Target);
+                EnsureComp<StreetRebelAccentComponent>(args.Target); // Erida edit
 
                 if (_random.Next(0, 8) == 0)
                 {
