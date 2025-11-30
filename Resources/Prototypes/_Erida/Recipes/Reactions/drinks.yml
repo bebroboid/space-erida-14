@@ -46,8 +46,6 @@
 - type: reaction
   id: Brandtini
   reactants:
-    Sugar:
-      amount: 1
     Karmotrine:
       amount: 2
     Rum:
