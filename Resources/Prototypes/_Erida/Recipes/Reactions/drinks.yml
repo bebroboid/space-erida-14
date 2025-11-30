@@ -180,10 +180,8 @@
 - type: reaction
   id: GutPunch
   reactants:
-    Karmotrine:
-      amount: 2
-    Cognac:
-      amount: 1
+    PileDriver:
+      amount: 3
     FourteenLoko:
       amount: 1
   products:
