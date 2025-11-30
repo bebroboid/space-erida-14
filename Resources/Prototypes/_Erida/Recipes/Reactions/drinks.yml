@@ -268,7 +268,7 @@
   reactants:
     Beer:
       amount: 1
-    Antihol:
+    Ice:
       amount: 1
   products:
     FrothyWater: 2
