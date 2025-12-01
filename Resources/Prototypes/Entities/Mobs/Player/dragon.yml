@@ -40,7 +40,7 @@
   - type: InputMover
   - type: MovementSpeedModifier
     baseWalkSpeed: 4
-    baseSprintSpeed: 6.5
+    baseSprintSpeed: 6
     baseWeightlessModifier: 1.5
   - type: RandomSprite
     available:
@@ -132,8 +132,8 @@
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
     damage:
       types:
-        Piercing: 30
-        Slash: 20
+        Piercing: 15
+        Slash: 25
   - type: Devourer
     foodPreferenceWhitelist:
       components:
