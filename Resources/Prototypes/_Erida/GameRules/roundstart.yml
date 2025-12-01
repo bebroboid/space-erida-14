@@ -54,7 +54,7 @@
   components:
   - type: SubGamemodes
     rules:
-    - id: NukeOps
+    - id: Nukeops
       prob: 0.3
     - id: Zombie
       prob: 0.3
