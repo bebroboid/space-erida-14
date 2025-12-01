@@ -10,7 +10,7 @@ public sealed partial class FreeGiftSystem : EntitySystem
     [Dependency] private readonly HandsSystem _handsSystem = default!;
 
     private float _nextGift = 0;
-    private float _giftCooldown = 600f;
+    private float _giftCooldown = 240f;
 
 
     public override void Update(float frameTime)
