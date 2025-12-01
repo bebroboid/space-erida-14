@@ -84,30 +84,6 @@
           festive: { state: christmaslamp-on }
 
 - type: entity
-  name: floor_light
-  id: LampFloorLight
-  parent: BaseLamp
-  description: A light emitting device.
-  components:
-  - type: Sprite
-    sprite: _Erida/Holidays/halloween/light/floor_light.rsi
-    layers:
-      - state: light
-  - type: Item
-    sprite: _Erida/Holidays/halloween/light/floor_light.rsi
-  - type: HolidayVisuals
-    holidays:
-      festive:
-      - FestiveSeason
-  - type: GenericVisualizer
-    visuals:
-      enum.HolidayVisuals.Holiday:
-        base:
-          festive: { state: christmaslamp }
-        light:
-          festive: { state: christmaslamp-on }
-
-- type: entity
   name: banana lamp
   id: LampBanana
   parent: BaseLamp
