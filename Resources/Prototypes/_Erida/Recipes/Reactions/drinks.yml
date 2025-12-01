@@ -46,8 +46,6 @@
 - type: reaction
   id: Brandtini
   reactants:
-    Sugar:
-      amount: 1
     Karmotrine:
       amount: 2
     Rum:
@@ -182,10 +180,8 @@
 - type: reaction
   id: GutPunch
   reactants:
-    Karmotrine:
-      amount: 2
-    Cognac:
-      amount: 1
+    PileDriver:
+      amount: 3
     FourteenLoko:
       amount: 1
   products:
@@ -268,7 +264,7 @@
   reactants:
     Beer:
       amount: 1
-    Ice:
+    IceCream:
       amount: 1
   products:
     FrothyWater: 2
