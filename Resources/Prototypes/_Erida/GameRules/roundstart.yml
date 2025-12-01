@@ -41,6 +41,12 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: BasicLightGameRulesTable
+  - type: SubGamemodes
+    rules:
+    - id: Traitor
+      prob: 0.6
+    - id: Thief
+      prob: 0.4
 
 - type: entity
   id: HardDynamicScheduler
