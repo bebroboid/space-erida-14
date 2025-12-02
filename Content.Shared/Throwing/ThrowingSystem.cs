@@ -208,14 +208,6 @@ public sealed class ThrowingSystem : EntitySystem
         var impulseVector = direction.Normalized() * throwSpeed * physics.Mass;
         _physics.ApplyLinearImpulse(uid, impulseVector, body: physics);
 
-        var thrownEvent = new ThrownEvent(user, uid);
-        RaiseLocalEvent(uid, ref thrownEvent, true);
-        if (user != null)
-        {
-            var throwEvent = new ThrowEvent(user, uid);
-            RaiseLocalEvent(user.Value, ref throwEvent, true);
-        }
-
         if (comp.LandTime == null || comp.LandTime <= TimeSpan.Zero)
         {
             _thrownSystem.LandComponent(uid, comp, physics, playSound);

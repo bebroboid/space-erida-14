@@ -183,7 +183,7 @@ public abstract partial class SharedStackSystem : EntitySystem
         ReduceCount(eaten.AsNullable(), 1);
     }
 
-    private void OnStackAlternativeInteract(Entity<StackComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
+    private void OnStackAlternativeInteract(Entity<StackComponent> ent, GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract || args.Hands == null || ent.Comp.Count == 1)
             return;
@@ -218,55 +218,55 @@ public abstract partial class SharedStackSystem : EntitySystem
 
             args.Verbs.Add(verb);
         }
+    }
 
-        private void OnStackAlternativeInteract(EntityUid uid, StackComponent stack, GetVerbsEvent<AlternativeVerb> args)
+    private void OnStackAlternativeInteract(EntityUid uid, StackComponent stack, GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract || args.Hands == null || stack.Count == 1)
+            return;
+
+        AlternativeVerb halve = new()
         {
-            if (!args.CanAccess || !args.CanInteract || args.Hands == null || stack.Count == 1)
-                return;
+            Text = Loc.GetString("comp-stack-split-halve"),
+            Category = VerbCategory.Split,
+            Act = () => UserSplit(uid, args.User, stack.Count / 2, stack),
+            Priority = 1
+        };
+        args.Verbs.Add(halve);
 
-            AlternativeVerb halve = new()
+        var priority = 0;
+        foreach (var amount in DefaultSplitAmounts)
+        {
+            if (amount >= stack.Count)
+                continue;
+
+            AlternativeVerb verb = new()
             {
-                Text = Loc.GetString("comp-stack-split-halve"),
+                Text = amount.ToString(),
                 Category = VerbCategory.Split,
-                Act = () => UserSplit(uid, args.User, stack.Count / 2, stack),
-                Priority = 1
+                Act = () => UserSplit(uid, args.User, amount, stack),
+                // we want to sort by size, not alphabetically by the verb text.
+                Priority = priority
             };
-            args.Verbs.Add(halve);
 
-            var priority = 0;
-            foreach (var amount in DefaultSplitAmounts)
-            {
-                if (amount >= stack.Count)
-                    continue;
+            priority--;
 
-                AlternativeVerb verb = new()
-                {
-                    Text = amount.ToString(),
-                    Category = VerbCategory.Split,
-                    Act = () => UserSplit(uid, args.User, amount, stack),
-                    // we want to sort by size, not alphabetically by the verb text.
-                    Priority = priority
-                };
-
-                priority--;
-
-                args.Verbs.Add(verb);
-            }
+            args.Verbs.Add(verb);
         }
+    }
 
-        /// <remarks>
-        ///     OnStackAlternativeInteract() was moved to shared in order to faciliate prediction of stack splitting verbs.
-        ///     However, prediction of interacitons with spawned entities is non-functional (or so i'm told)
-        ///     So, UserSplit() and Split() should remain on the server for the time being.
-        ///     This empty virtual method allows for UserSplit() to be called on the server from the client.
-        ///     When prediction is improved, those two methods should be moved to shared, in order to predict the splitting itself (not just the verbs)
-        /// </remarks>
-        protected virtual void UserSplit(EntityUid uid, EntityUid userUid, int amount,
-            StackComponent? stack = null,
-            TransformComponent? userTransform = null)
-        {
+    /// <remarks>
+    ///     OnStackAlternativeInteract() was moved to shared in order to faciliate prediction of stack splitting verbs.
+    ///     However, prediction of interacitons with spawned entities is non-functional (or so i'm told)
+    ///     So, UserSplit() and Split() should remain on the server for the time being.
+    ///     This empty virtual method allows for UserSplit() to be called on the server from the client.
+    ///     When prediction is improved, those two methods should be moved to shared, in order to predict the splitting itself (not just the verbs)
+    /// </remarks>
+    protected virtual void UserSplit(EntityUid uid, EntityUid userUid, int amount,
+        StackComponent? stack = null,
+        TransformComponent? userTransform = null)
+    {
 
-        }
     }
 
     /// <remarks>
