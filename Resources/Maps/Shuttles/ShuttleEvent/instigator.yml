@@ -1741,18 +1741,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -1.5,3.5
       parent: 1
-- proto: CrateSyndicateSurplusBundle
-  entities:
-  - uid: 459
-    components:
-    - type: Transform
-      pos: -7.5,9.5
-      parent: 1
-  - uid: 460
-    components:
-    - type: Transform
-      pos: -7.5,8.5
-      parent: 1
 - proto: CyberPen
   entities:
   - uid: 328
@@ -3094,7 +3082,7 @@ entities:
       - SurveillanceCameraSecurity
       nameSet: True
       id: Aft-Starboard
-- proto: InteQComputerComms
+- proto: SyndicateComputerComms
   entities:
   - uid: 142
     components:
