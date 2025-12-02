@@ -387,6 +387,7 @@ stack-astro-snow-floor = астро-снег
 stack-xeno-floor = ксенопол
 stack-xeno-steel = стальной ксенопол
 stack-xeno-steel-corner = стальной угловой ксенопол
+stack-xenoborg = ксеноборгская плита
 stack-xeno-maint = технический ксенопол
 stack-dark-squiggly = тёмная волнистая стальная плитка
 stack-large-wood-floor = большой деревянный пол

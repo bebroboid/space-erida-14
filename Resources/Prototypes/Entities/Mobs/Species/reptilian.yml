@@ -107,6 +107,50 @@
     understands:
     - TauCetiBasic
     - Dragon
+  - type: Inventory
+    speciesId: reptilian
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi # Corvax-Digitigrade
+            state: jumpsuit-female
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi # Corvax
+            state: shoes
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: mask
+    displacements:
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: mask
+      jumpsuit:   ## Corvax
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: jumpsuit
+      shoes:      ## Corvax
+        sizeMaps:
+          32:
+            sprite: Corvax/Mobs/Species/displacement.rsi
+            state: shoes
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -138,12 +182,22 @@
             sprite: _Orion/Mobs/Species/displacement.rsi
             state: shoes
     displacements:
-      jumpsuit:
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: mask
+      jumpsuit:    # corvax
         sizeMaps:
           32:
             sprite: _Orion/Mobs/Species/displacement.rsi
             state: jumpsuit
-      shoes:
+      shoes:       # corvax
         sizeMaps:
           32:
             sprite: _Orion/Mobs/Species/displacement.rsi
