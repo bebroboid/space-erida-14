@@ -508,7 +508,13 @@
   - type: Sprite
     layers:
     - state: default
-    - state: idbrigmedic
+    - state: stripe_top
+      color: *color-security-top
+    - state: stripe_bottom
+      color: *color-security-bottom
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Brigmedic
   - type: PresetIdCard
     job: Brigmedic
 
@@ -1302,29 +1308,33 @@
   id: IAAIDCard
   name: internal affairs agent ID card
   components:
-    - type: Sprite
-      layers:
-        - state: card_silver # Backmen
-        - state: sub_department # Backmen
-          color: "#1b67a5"
-        - state: frame_head # Backmen
-          color: "#1b67a5"
-        - state: idiaa
-    - type: PresetIdCard
-      job: IAA
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: stripe_top
+      color: "#1b67a5"
+    - state: stripe_bottom
+      color: "#0e4069"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: IAA
+  - type: PresetIdCard
+    job: IAA
 
 - type: entity
   parent: IDCardStandard
   id: PilotIDCard
   name: pilot ID card
   components:
-    - type: Sprite
-      layers:
-        - state: default
-        - state: sub_department # Backmen
-          color: "#cb0000"
-        - state: frame_default # Backmen
-          color: "#cb0000"
-        - state: idpilot
-    - type: PresetIdCard
-      job: SecurityPilot
+  - type: Sprite
+    layers:
+    - state: default
+    - state: stripe_top
+      color: *color-security-top
+    - state: stripe_bottom
+      color: *color-security-bottom
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Pilot
+  - type: PresetIdCard
+    job: SecurityPilot
