@@ -132,12 +132,7 @@ public sealed partial class AtmosphereSystem
                     cleanable: true);
             }
 
-            if (tile.ExcitedGroup != null) //ADT-Gas
-                ExcitedGroupResetCooldowns(tile.ExcitedGroup);
-
-            if ((tile.Hotspot.Temperature < Atmospherics.FireMinimumTemperatureToExist) || (tile.Hotspot.Volume <= 1f)
-                || tile.Air == null || tile.Air.GetMoles(Gas.Oxygen) < 0.5f || (tile.Air.GetMoles(Gas.Plasma) < 0.5f && tile.Air.GetMoles(Gas.Tritium) < 0.5f && tile.Air.GetMoles(Gas.Hydrogen) < 0.5f && tile.Air.GetMoles(Gas.HyperNoblium) > 5f)  //ADT-Gas
-                || tile.Air.Temperature > Atmospherics.FireMinimumTemperatureToSpread)
+            if (tile.Air.Temperature > Atmospherics.FireMinimumTemperatureToSpread)
             {
                 var radiatedTemperature = tile.Air.Temperature * Atmospherics.FireSpreadRadiosityScale;
                 foreach (var otherTile in tile.AdjacentTiles)
@@ -151,97 +146,6 @@ public sealed partial class AtmosphereSystem
                     if (!otherTile.Hotspot.Valid)
                         HotspotExpose(gridAtmosphere, otherTile, radiatedTemperature, Atmospherics.CellVolume / 4);
                 }
-
-                // Add a random burned decal to the tile only if there are less than 4 of them
-                if (tileBurntDecals < 4)
-                    _decalSystem.TryAddDecal(_burntDecals[_random.Next(_burntDecals.Length)], new EntityCoordinates(gridUid, tilePos), out _, cleanable: true);
-
-                if (tile.Air.Temperature > Atmospherics.FireMinimumTemperatureToSpread)
-                {
-                    var radiatedTemperature = tile.Air.Temperature * Atmospherics.FireSpreadRadiosityScale;
-                    foreach (var otherTile in tile.AdjacentTiles)
-                    {
-                        // TODO ATMOS: This is sus. Suss this out.
-                        if (otherTile == null)
-                            continue;
-
-                        if (!otherTile.Hotspot.Valid) //ADT-gas
-                            HotspotExpose(gridAtmosphere, otherTile, radiatedTemperature, Atmospherics.CellVolume/4);
-                    }
-                }
-            }
-            else
-            {
-                tile.Hotspot.State = (byte)(tile.Hotspot.Volume > Atmospherics.CellVolume * 0.4f ? 2 : 1); //ADT-gas
-            }
-
-            if (tile.Hotspot.Temperature > tile.MaxFireTemperatureSustained)
-                tile.MaxFireTemperatureSustained = tile.Hotspot.Temperature;
-
-            if (_hotspotSoundCooldown++ == 0 && HotspotSound != null)
-            {
-                var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
-
-                // A few details on the audio parameters for fire.
-                // The greater the fire state, the lesser the pitch variation.
-                // The greater the fire state, the greater the volume.
-                _audio.PlayPvs(HotspotSound, coordinates, HotspotSound.Params.WithVariation(0.15f / tile.Hotspot.State).WithVolume(-5f + 5f * tile.Hotspot.State));
-            }
-
-            if (_hotspotSoundCooldown > HotspotSoundCooldownCycles)
-                _hotspotSoundCooldown = 0;
-
-            // TODO ATMOS Maybe destroy location here?
-        }
-
-        private void HotspotExpose(GridAtmosphereComponent gridAtmosphere, TileAtmosphere tile,
-            float exposedTemperature, float exposedVolume, bool soh = false, EntityUid? sparkSourceUid = null)
-        {
-            if (tile.Air == null)
-                return;
-
-            var oxygen = tile.Air.GetMoles(Gas.Oxygen);
-
-            if (oxygen < 0.5f)
-                return;
-
-            var plasma = tile.Air.GetMoles(Gas.Plasma);
-            var tritium = tile.Air.GetMoles(Gas.Tritium);
-            //ADT-Gas-Start
-            var hydrogen = tile.Air.GetMoles(Gas.Hydrogen);
-            var hypernoblium = tile.Air.GetMoles(Gas.HyperNoblium);
-            //ADT-Gas-End
-            if (tile.Hotspot.Valid)
-            {
-                if (soh)
-                {
-                    if (plasma > 0.5f && hypernoblium < 5f || tritium > 0.5f && hypernoblium < 5f || hydrogen > 0.5f && hypernoblium < 5f) //ADT-Gas
-                    {
-                        if (tile.Hotspot.Temperature < exposedTemperature)
-                            tile.Hotspot.Temperature = exposedTemperature;
-                        if (tile.Hotspot.Volume < exposedVolume)
-                            tile.Hotspot.Volume = exposedVolume;
-                    }
-                }
-
-                return;
-            }
-
-            if ((exposedTemperature > Atmospherics.PlasmaMinimumBurnTemperature) && (plasma > 0.5f && hypernoblium < 5f || tritium > 0.5f && hypernoblium < 5f || hydrogen > 0.5f && hypernoblium < 5f)) //ADT-Gas
-            {
-                if (sparkSourceUid.HasValue)
-                    _adminLog.Add(LogType.Flammable, LogImpact.High, $"Heat/spark of {ToPrettyString(sparkSourceUid.Value)} caused atmos ignition of gas: {tile.Air.Temperature.ToString():temperature}K - {oxygen}mol Oxygen, {plasma}mol Plasma, {tritium}mol Tritium, {hydrogen}mol Hydrogen"); //ADT-Gas
-                tile.Hotspot = new Hotspot
-                {
-                    Volume = exposedVolume * 25f,
-                    Temperature = exposedTemperature,
-                    SkippedFirstProcess = tile.CurrentCycle > gridAtmosphere.UpdateCounter,
-                    Valid = true,
-                    State = 1
-                };
-
-                AddActiveTile(gridAtmosphere, tile);
-                gridAtmosphere.HotspotTiles.Add(tile);
             }
         }
         else
@@ -250,7 +154,8 @@ public sealed partial class AtmosphereSystem
             tile.Hotspot.State = (byte)(tile.Hotspot.Volume > Atmospherics.CellVolume * 0.4f ? 2 : 1);
         }
 
-            tile.Hotspot.Bypassing = tile.Hotspot.SkippedFirstProcess && tile.Hotspot.Volume > tile.Air.Volume * 0.95f; //ADT-gas
+        if (tile.Hotspot.Temperature > tile.MaxFireTemperatureSustained)
+            tile.MaxFireTemperatureSustained = tile.Hotspot.Temperature;
 
         if (_hotspotSoundCooldown++ == 0 && HotspotSound != null)
         {

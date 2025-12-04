@@ -282,7 +282,7 @@
   components:
   - type: StaticPrice
     price: 420
-  - type: HitscanBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: RedLaser
     fireCost: 62.5
   - type: PacifismAllowedGun
