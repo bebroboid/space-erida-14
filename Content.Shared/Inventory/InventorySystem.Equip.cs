@@ -326,7 +326,7 @@ public abstract partial class InventorySystem
         // Erida edit end
 
         if (_whitelistSystem.IsWhitelistFail(slotDefinition.Whitelist, itemUid) ||
-            _whitelistSystem.IsBlacklistPass(slotDefinition.Blacklist, itemUid))
+            _whitelistSystem.IsWhitelistPass(slotDefinition.Blacklist, itemUid))
         {
             reason = "inventory-component-can-equip-does-not-fit";
             return false;
