@@ -1,7 +1,7 @@
 - type: species
   id: Vulpkanin
   name: species-name-vulpkanin
-  roundStart: true
+  roundStart: false # Erida
   prototype: MobVulpkanin
   sprites: MobVulpkaninSprites
   defaultSkinTone: "#5a3f2d"
@@ -10,7 +10,8 @@
   skinColoration: VulpkaninColors
   maleFirstNames: names_vulpkanin_male
   femaleFirstNames: names_vulpkanin_female
-  lastNames: names_vulpkanin_last
+  malelastNames: names_vulpkanin_last
+  femaleFirstNames: names_vulpkanin_female
 
 - type: speciesBaseSprites
   id: MobVulpkaninSprites

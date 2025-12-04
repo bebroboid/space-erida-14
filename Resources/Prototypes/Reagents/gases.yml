@@ -22,10 +22,10 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [Shadowkin]
-          shouldHave: false
+          inverted: true
         - !type:MetabolizerTypeCondition
           type: [Vox]
-          shouldHave: false
+          inverted: true
         ratios:
           CarbonDioxide: 1.0
           Oxygen: -1.0
@@ -208,13 +208,13 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Plant ]
-          shouldHave: false
+          inverted: true
         - !type:MetabolizerTypeCondition
           type: [ Vox ]
-          shouldHave: false
+          inverted: true
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: true
         # Don't want people to get toxin damage from the gas they just
         # exhaled, right?
         ignoreResistances: true
