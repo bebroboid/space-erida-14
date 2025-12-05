@@ -71151,24 +71151,16 @@ entities:
     - type: Transform
       pos: 55.5,9.5
       parent: 2
-- proto: OperatingTableFilled
-  entities:
   - uid: 10734
     components:
     - type: Transform
       pos: 66.5,-10.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        gas_tank_slot: !type:ContainerSlot {}
   - uid: 10735
     components:
     - type: Transform
       pos: 65.5,-4.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        gas_tank_slot: !type:ContainerSlot {}
 - proto: OreProcessor
   entities:
   - uid: 10736

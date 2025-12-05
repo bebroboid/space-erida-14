@@ -142841,8 +142841,6 @@ entities:
     - type: Transform
       pos: 53.5,-22.5
       parent: 2
-- proto: OperatingTableFilled
-  entities:
   - uid: 20344
     components:
     - type: Transform

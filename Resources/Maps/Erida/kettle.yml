@@ -123539,16 +123539,13 @@ entities:
     - type: Transform
       pos: -19.103985,-19.247879
       parent: 2
-- proto: OperatingTableFilled
+- proto: OperatingTable
   entities:
   - uid: 18446
     components:
     - type: Transform
       pos: -33.5,-41.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        gas_tank_slot: !type:ContainerSlot {}
 - proto: OreBag
   entities:
   - uid: 18447

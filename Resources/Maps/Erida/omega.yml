@@ -66349,8 +66349,6 @@ entities:
     - type: Transform
       pos: -18.5,-16.5
       parent: 2
-- proto: OperatingTableFilled
-  entities:
   - uid: 9862
     components:
     - type: Transform

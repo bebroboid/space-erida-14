@@ -134476,24 +134476,16 @@ entities:
     - type: Transform
       pos: 38.5,-30.5
       parent: 2
-- proto: OperatingTableFilled
-  entities:
   - uid: 19949
     components:
     - type: Transform
       pos: -24.5,-51.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        gas_tank_slot: !type:ContainerSlot {}
   - uid: 19950
     components:
     - type: Transform
       pos: -34.5,-51.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        gas_tank_slot: !type:ContainerSlot {}
 - proto: OreBox
   entities:
   - uid: 19951

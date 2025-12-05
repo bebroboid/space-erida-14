@@ -88320,16 +88320,11 @@ entities:
     - type: Transform
       pos: -13.5,7.5
       parent: 2
-- proto: OperatingTableFilled
-  entities:
   - uid: 12252
     components:
     - type: Transform
       pos: 36.5,4.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        gas_tank_slot: !type:ContainerSlot {}
 - proto: OreBox
   entities:
   - uid: 12253

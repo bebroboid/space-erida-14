@@ -129271,32 +129271,21 @@ entities:
     - type: Transform
       pos: -34.5,-53.5
       parent: 2
-- proto: OperatingTableFilled
-  entities:
   - uid: 19323
     components:
     - type: Transform
       pos: -22.5,-40.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        gas_tank_slot: !type:ContainerSlot {}
   - uid: 19324
     components:
     - type: Transform
       pos: -22.5,-34.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        gas_tank_slot: !type:ContainerSlot {}
   - uid: 19325
     components:
     - type: Transform
       pos: -34.5,-36.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        gas_tank_slot: !type:ContainerSlot {}
 - proto: OreBag
   entities:
   - uid: 19326

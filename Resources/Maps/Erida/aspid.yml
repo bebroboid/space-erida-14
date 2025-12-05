@@ -104496,16 +104496,11 @@ entities:
     - type: Transform
       pos: 36.5,-17.5
       parent: 2
-- proto: OperatingTableFilled
-  entities:
   - uid: 14345
     components:
     - type: Transform
       pos: 3.5,27.5
       parent: 2
-    - type: ContainerContainer
-      containers:
-        gas_tank_slot: !type:ContainerSlot {}
 - proto: OreBag
   entities:
   - uid: 14346
