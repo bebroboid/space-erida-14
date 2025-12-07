@@ -55,7 +55,10 @@
       types:
         Blunt: 1 # per second, scales with pressure and other constants.
   - type: Bloodstream
-    bloodReagent: ShadowkinBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: ShadowkinBlood
+        Quantity: 1
     bloodlossDamage:
       types:
         Bloodloss:
