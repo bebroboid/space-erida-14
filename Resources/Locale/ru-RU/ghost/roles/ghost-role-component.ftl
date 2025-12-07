@@ -290,3 +290,6 @@ ghost-role-information-wizard-desc = ТЫ ВОЛШЕБНИК! Покажи ст�
 
 ghost-role-information-emotional-support-scurret-name = Ва-ва!
 ghost-role-information-emotional-support-scurret-description = Поддерживайте экипаж, и говорите Ва-ва!.
+
+ghost-role-information-xenoborg-name = Ксеноборг
+ghost-role-information-xenoborg-desc = Необычный киборг, созданный для самовоспроизведения и захвата станции, превращая любое разумное существо в ксеноборга.
