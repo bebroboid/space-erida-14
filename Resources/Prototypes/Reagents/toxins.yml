@@ -317,7 +317,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: false
         damage:
           types:
             Asphyxiation: 5
@@ -326,7 +326,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         damage:
           types:
             Bloodloss: 5
@@ -350,7 +350,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: false
         damage:
           groups:
             Airloss: 10
@@ -359,7 +359,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         damage:
           types:
             Bloodloss: 8
@@ -405,7 +405,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: false
         - !type:ReagentCondition
           reagent: Histamine
           min: 45
@@ -420,7 +420,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         - !type:ReagentCondition
           reagent: Histamine
           min: 45
@@ -715,7 +715,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: false
         damage:
           groups:
             Airloss: 2
@@ -724,7 +724,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         damage:
           types:
             Bloodloss: 2

@@ -254,7 +254,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         - !type:ReagentCondition
           reagent: Dermaline
           min: 10
@@ -286,7 +286,7 @@
         conditions:
           - !type:MetabolizerTypeCondition
             type: [ Shadowkin ]
-            shouldHave: false
+            inverted: false
         damage:
           types:
             Asphyxiation: -1
@@ -305,7 +305,7 @@
         conditions:
           - !type:MetabolizerTypeCondition
             type: [ Shadowkin ]
-            shouldHave: true
+            inverted: true
         damage:
           types:
             Asphyxiation: -1
@@ -314,7 +314,7 @@
         conditions:
           - !type:MetabolizerTypeCondition
             type: [ Shadowkin ]
-            shouldHave: true
+            inverted: true
           - !type:ReagentCondition
             reagent: Dexalin
             min: 20
@@ -340,7 +340,7 @@
         conditions:
           - !type:MetabolizerTypeCondition
             type: [ Shadowkin ]
-            shouldHave: false
+            inverted: false
         # Erida tweaks end
         damage:
           types:
@@ -367,7 +367,7 @@
         conditions:
           - !type:MetabolizerTypeCondition
             type: [ Shadowkin ]
-            shouldHave: true
+            inverted: true
         damage:
           types:
             Asphyxiation: -2
@@ -376,7 +376,7 @@
         conditions:
           - !type:MetabolizerTypeCondition
             type: [ Shadowkin ]
-            shouldHave: true
+            inverted: true
           - !type:ReagentCondition
             reagent: DexalinPlus
             min: 25
@@ -409,7 +409,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: false
           # they gotta be in crit first
         - !type:MobStateCondition
           mobstate: Critical
@@ -437,7 +437,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         - !type:MobStateCondition
           mobstate: Critical
         - !type:ReagentCondition
@@ -456,7 +456,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         - !type:ReagentCondition
           reagent: Epinephrine
           min: 20
@@ -562,7 +562,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: false
           # they gotta be in crit first
         - !type:MobStateCondition
           mobstate: Critical
@@ -576,7 +576,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         - !type:MobStateCondition
           mobstate: Critical
         damage:
@@ -756,7 +756,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: false
         damage:
           groups:
             Brute: -3.5
@@ -775,7 +775,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         damage:
           groups:
             Brute: -3.5
@@ -785,7 +785,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         - !type:ReagentCondition
           reagent: PolypyryliumOligomers
           min: 30

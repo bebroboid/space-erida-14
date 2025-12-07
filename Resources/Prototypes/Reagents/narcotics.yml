@@ -16,7 +16,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: false
         damage:
           types:
             Poison: 1.25 # Erida
@@ -25,7 +25,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: false
         - !type:ReagentCondition
           reagent: Desoxyephedrine
           min: 10
@@ -38,7 +38,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         damage:
           types:
             Poison: 1.25
@@ -47,7 +47,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         - !type:ReagentCondition
           reagent: Desoxyephedrine
           min: 10
@@ -110,7 +110,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: false
         - !type:ReagentCondition
           reagent: Ephedrine
           min: 12 # Erida
@@ -123,7 +123,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: true
+          inverted: true
         - !type:ReagentCondition
           reagent: Ephedrine
           min: 20

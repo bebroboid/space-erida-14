@@ -18,13 +18,11 @@
         effectProto: StatusEffectSeeingRainbow
         time: 10
         type: Add
-        refresh: false
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition
           reagent: BZ
           min: 1
-        scaleByQuantity: true
         ignoreResistances: true
         damage:
           types:
@@ -47,7 +45,7 @@
           min: 1
         - !type:MetabolizerTypeCondition
           type: [Slime]
-          shouldHave: true
+          inverted: true
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
       - !type:ModifyStatusEffect
@@ -97,7 +95,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [Vox]
-          shouldHave: false
+          inverted: false
         ratios:
           CarbonDioxide: 1.0
           Pluoxium: -1.0
@@ -137,7 +135,6 @@
         - !type:ReagentCondition
           reagent: Healium
           min: 0.5
-        scaleByQuantity: true
         ignoreResistances: true
         damage:
           groups:
@@ -159,7 +156,6 @@
       metabolismRate: 1.0
       effects:
       - !type:MovementSpeedModifier
-        statusLifetime: 7
         walkSpeedModifier: 1.35
         sprintSpeedModifier: 1.35
       - !type:HealthChange
@@ -214,7 +210,6 @@
         - !type:ReagentCondition
           reagent: Zauker
           min: 0.25
-        scaleByQuantity: true
         ignoreResistances: true
         damage:
           types:

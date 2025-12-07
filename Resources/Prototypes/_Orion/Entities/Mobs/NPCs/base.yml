@@ -85,8 +85,8 @@
       reagents:
       - ReagentId: Blood
         Quantity: 1
-      bloodMaxVolume: 10
-      bloodlossThreshold: 0
+    bloodlossThreshold: 0
+    bloodMaxVolume: 10
   - type: Destructible
     thresholds:
     - trigger:

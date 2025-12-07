@@ -56,10 +56,10 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [Shadowkin]
-          shouldHave: false
+          inverted: false
         - !type:MetabolizerTypeCondition
           type: [Vox]
-          shouldHave: false
+          inverted: false
         ratios:
           CarbonDioxide: 1.0
           Oxygen: -1.0
@@ -185,7 +185,6 @@
         - !type:MetabolizerTypeCondition
           type: [Shadowkin]
           inverted: false
-        scaleByQuantity: true
         ignoreResistances: true
         damage:
           types:
@@ -259,7 +258,7 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Shadowkin ]
-          shouldHave: false
+          inverted: false
         - !type:MetabolizerTypeCondition
           type: [ Vox ]
         ratios:
