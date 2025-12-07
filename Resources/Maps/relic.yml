@@ -4966,10 +4966,9 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
+      - Engineering
+      - Scientific
+      - Service
   - uid: 7795
     components:
     - type: Transform
@@ -4977,10 +4976,9 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
+      - Engineering
+      - Scientific
+      - Service
   - uid: 8478
     components:
     - type: Transform
@@ -4988,10 +4986,9 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
+      - Engineering
+      - Scientific
+      - Service
 - proto: BackgammonBoard
   entities:
   - uid: 10306
@@ -20566,10 +20563,11 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Scientific
+      - Service
 - proto: ClosetEmergencyFilledRandom
   entities:
   - uid: 1020

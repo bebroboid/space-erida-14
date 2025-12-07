@@ -17575,10 +17575,7 @@ entities:
       parent: 30
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
+      - Service
   - uid: 14278
     components:
     - type: Transform
@@ -120258,10 +120255,8 @@ entities:
       parent: 30
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Security
       - Arsenal
-      - Experimental
-      - CivilianServices
 - proto: SeedExtractor
   entities:
   - uid: 4701
@@ -132472,10 +132467,7 @@ entities:
       parent: 30
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
+      - Service
     - type: MaterialStorage
       materialWhiteList:
       - Cloth

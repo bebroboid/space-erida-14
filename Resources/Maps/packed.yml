@@ -12803,10 +12803,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
   - uid: 6910
     components:
     - type: Transform
@@ -13328,10 +13328,7 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
+      - Service
   - uid: 13653
     components:
     - type: Transform
@@ -41068,10 +41065,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: CleanerDispenser
   entities:
   - uid: 6875
@@ -42993,10 +42990,11 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Scientific
+      - Service
   - uid: 5376
     components:
     - type: Transform
@@ -43005,10 +43003,11 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Scientific
+      - Service
   - uid: 10387
     components:
     - type: Transform
@@ -43022,10 +43021,11 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Scientific
+      - Service
 - proto: ComputerRoboticsControl
   entities:
   - uid: 5330
@@ -48211,10 +48211,11 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Scientific
+      - Service
 - proto: ExtinguisherCabinetFilled
   entities:
   - uid: 315
@@ -75067,10 +75068,11 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Scientific
+      - Service
 - proto: OxygenCanister
   entities:
   - uid: 945
@@ -79238,10 +79240,11 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Scientific
+      - Service
 - proto: ProtolatheMachineCircuitboard
   entities:
   - uid: 12658
@@ -82784,10 +82787,8 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
 - proto: SeedExtractor
   entities:
   - uid: 2431
@@ -90899,10 +90900,7 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
+      - Service
 - proto: Vaccinator
   entities:
   - uid: 12157

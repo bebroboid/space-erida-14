@@ -30234,10 +30234,7 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
-      - Arsenal
-      - Experimental
-      - CivilianServices
+      - Service
 - proto: BlastDoor
   entities:
   - uid: 113
