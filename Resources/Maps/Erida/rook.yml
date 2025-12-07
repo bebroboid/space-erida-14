@@ -38957,10 +38957,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: SeedExtractor
   entities:
   - uid: 6046
@@ -43373,10 +43373,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: Vaccinator
   entities:
   - uid: 6615

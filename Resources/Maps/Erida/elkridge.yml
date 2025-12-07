@@ -95405,10 +95405,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: SeedExtractor
   entities:
   - uid: 13501
@@ -105600,10 +105600,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: UniformShortsRed
   entities:
   - uid: 14884

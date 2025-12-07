@@ -78714,10 +78714,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: SeedExtractor
   entities:
   - uid: 11997
@@ -86773,10 +86773,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: UraniumReinforcedWindowDirectional
   entities:
   - uid: 13105

@@ -74005,10 +74005,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: SeedExtractor
   entities:
   - uid: 11229
@@ -81579,10 +81579,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: UprightPianoInstrument
   entities:
   - uid: 12275

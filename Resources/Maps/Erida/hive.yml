@@ -136456,10 +136456,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: SeedExtractor
   entities:
   - uid: 20333
@@ -148272,10 +148272,10 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: UniformScrubsColorGreen
   entities:
   - uid: 21998

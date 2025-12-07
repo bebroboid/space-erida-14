@@ -22434,7 +22434,7 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -50343,7 +50343,7 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -53862,7 +53862,7 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -53873,7 +53873,7 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -63281,7 +63281,7 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices

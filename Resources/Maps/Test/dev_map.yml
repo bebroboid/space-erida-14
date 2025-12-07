@@ -16551,10 +16551,10 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Scientific
+      - Service
 - proto: UraniumReinforcedWindowDirectional
   entities:
   - uid: 748

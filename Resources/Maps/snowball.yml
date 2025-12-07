@@ -12789,7 +12789,7 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -13150,7 +13150,7 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -42338,7 +42338,7 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -43543,7 +43543,7 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -43555,7 +43555,7 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -43566,7 +43566,7 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -51953,7 +51953,7 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -85457,7 +85457,7 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -89153,7 +89153,7 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -92702,7 +92702,7 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
@@ -100297,7 +100297,7 @@ entities:
       parent: 1
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
       - Experimental
       - CivilianServices
