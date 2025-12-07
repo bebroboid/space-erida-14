@@ -94071,7 +94071,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - Service
 - proto: ProximitySensor
   entities:

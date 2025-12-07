@@ -12791,7 +12791,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: BanjoInstrument
   entities:
@@ -13152,7 +13152,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
   - uid: 14382
     components:
@@ -42340,7 +42340,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: CleanerDispenser
   entities:
@@ -43545,7 +43545,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
   - uid: 15918
     components:
@@ -43557,7 +43557,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
   - uid: 15920
     components:
@@ -43568,7 +43568,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: ComputerRoboticsControl
   entities:
@@ -51955,7 +51955,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: ExtinguisherCabinetFilled
   entities:
@@ -85459,7 +85459,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: MedkitBruteFilled
   entities:
@@ -89155,7 +89155,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: ProtolatheMachineCircuitboard
   entities:
@@ -92704,7 +92704,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: SeedExtractor
   entities:
@@ -100299,7 +100299,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: Vaccinator
   entities:

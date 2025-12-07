@@ -22436,7 +22436,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: ComputerShuttleCargo
   entities:
@@ -50345,7 +50345,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: MedkitBruteFilled
   entities:
@@ -53864,7 +53864,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
   - uid: 8479
     components:
@@ -53875,7 +53875,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: ProximitySensor
   entities:
@@ -63283,7 +63283,7 @@ entities:
       supportedDisciplines:
       - Engineering
       - Arsenal
-      - Experimental
+      - Scientific
       - CivilianServices
 - proto: VendingMachineCart
   entities:
