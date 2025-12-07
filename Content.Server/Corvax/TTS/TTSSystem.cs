@@ -12,6 +12,7 @@ using Content.Shared.Random.Helpers;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Shared.Chat;
 
 namespace Content.Server.Corvax.TTS;
 

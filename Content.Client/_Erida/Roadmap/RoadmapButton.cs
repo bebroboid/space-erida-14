@@ -15,7 +15,7 @@ public sealed class RoadmapButton : Button
     {
         base.EnteredTree();
         Text = Loc.GetString("roadmap-button");
-        StyleClasses.Add(StyleBase.ButtonCaution);
+        StyleClasses.Add(StyleNano.ButtonCaution);
     }
 
     protected override void ExitedTree()

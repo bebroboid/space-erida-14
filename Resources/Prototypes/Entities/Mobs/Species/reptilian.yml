@@ -138,12 +138,22 @@
             sprite: _Orion/Mobs/Species/displacement.rsi
             state: shoes
     displacements:
-      jumpsuit:
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: mask
+      jumpsuit:    # corvax
         sizeMaps:
           32:
             sprite: _Orion/Mobs/Species/displacement.rsi
             state: jumpsuit
-      shoes:
+      shoes:       # corvax
         sizeMaps:
           32:
             sprite: _Orion/Mobs/Species/displacement.rsi

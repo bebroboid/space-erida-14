@@ -8,4 +8,4 @@
     - id: ParadoxCloneSpawn
     - id: RevenantSpawn
     - id: SleeperAgents
-    - id: DerelictCyborgSpawn
+    - id: DerelictGenericCyborgSpawn

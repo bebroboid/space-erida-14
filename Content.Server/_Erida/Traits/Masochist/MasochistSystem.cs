@@ -1,6 +1,8 @@
 using Content.Server._Erida.Arousal;
 using Content.Shared._Erida.Traits.Masochist;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs.Components;
 
 namespace Content.Server._Erida.Traits.Masochist;

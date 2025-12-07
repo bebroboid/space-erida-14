@@ -1,13 +1,18 @@
 - type: entity
   parent: IDCardStandard
   id: CoSCCIDCard
-  categories: [ HideSpawnMenu ]
   name: centcom chief of staff ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: idcentcom
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: &icon-rsi Interface/Misc/job_icons.rsi
+      offset: &icon-offset -0.15375, 0.0325 #3 pixels left, 2 pixels up
+      state: Nanotrasen
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -16,13 +21,18 @@
 - type: entity
   parent: IDCardStandard
   id: CentcomOfficerIDCard
-  categories: [ HideSpawnMenu ]
   name: centcom officer ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: idcentcom
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -31,13 +41,18 @@
 - type: entity
   parent: IDCardStandard
   id: CentcomOperatorIDCard
-  categories: [ HideSpawnMenu ]
   name: centcom operator ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: idcentcom
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -46,13 +61,18 @@
 - type: entity
   parent: IDCardStandard
   id: CentcomIntendantIDCard
-  categories: [ HideSpawnMenu ]
   name: centcom intendant ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: idcentcom
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -61,13 +81,18 @@
 - type: entity
   parent: IDCardStandard
   id: CentcomEngineerIDCard
-  categories: [ HideSpawnMenu ]
   name: centcom engineer ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: idcentcom
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -76,13 +101,18 @@
 - type: entity
   parent: IDCardStandard
   id: CentcomClercIDCard
-  categories: [ HideSpawnMenu ]
   name: centcom clerc ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: idcentcom
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -91,13 +121,18 @@
 - type: entity
   parent: IDCardStandard
   id: OSOIDCard
-  categories: [ HideSpawnMenu ]
   name: OSO ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: idcentcom
+    - state: silver
+    - state: stripe_top
+      color: "#2c2c2c"
+    - state: stripe_bottom
+      color: "#2c2c2c"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -106,13 +141,18 @@
 - type: entity
   parent: IDCardStandard
   id: CentralCommandHoSIDCard
-  categories: [ HideSpawnMenu ]
   name: Central Command HoS ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: idcentcom
+    - state: silver
+    - state: stripe_top
+      color: "#4e0808"
+    - state: stripe_bottom
+      color: "#4e0808"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -121,13 +161,18 @@
 - type: entity
   parent: IDCardStandard
   id: CentralCommandSecIDCard
-  categories: [ HideSpawnMenu ]
   name: Central Command Security ID card
   components:
   - type: Sprite
     layers:
-    - state: centcom
-    - state: idcentcom
+    - state: silver
+    - state: stripe_top
+      color: "#282958"
+    - state: stripe_bottom
+      color: "#283758"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard

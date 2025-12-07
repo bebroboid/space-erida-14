@@ -27,6 +27,9 @@
     - WhitelistChameleon
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+  - type: HideLayerClothing
+    slots:
+      - Tail
 
 - type: entity
   parent: ClothingOuterSuitBomb
@@ -70,8 +73,9 @@
   - type: GroupExamine
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
-  - type: HideLayerClothing # Erida edit
-    layers: { Tail: OUTERCLOTHING }
+  - type: HideLayerClothing
+    slots:
+    - Tail
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
@@ -108,6 +112,9 @@
     tags:
     - CorgiWearable
     - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Tail
 
 - type: entity
   parent: [ClothingOuterBaseLarge, GeigerCounterClothing, AllowSuitStorageClothing]
@@ -133,11 +140,12 @@
       toggleable-clothing: !type:ContainerSlot {}
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
-  - type: HideLayerClothing # Erida edit
-    layers: { Tail: OUTERCLOTHING }
+  - type: HideLayerClothing
+    slots:
+    - Tail
 
 - type: entity
-  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseMajorContraband]
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseHighlyIllegalContraband]
   id: ClothingOuterSuitSpaceNinja
   name: space ninja suit
   description: This black technologically advanced, cybernetically-enhanced suit provides many abilities like invisibility or teleportation.
@@ -199,6 +207,9 @@
         whitelist:
           tags:
             - PowerCell
+  - type: HideLayerClothing
+    slots:
+    - Tail
 
 - type: entity
   parent: ClothingOuterBase
@@ -292,6 +303,8 @@
   - type: SlotBlock
     blockList: [ UNDERWEAR, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING, SOCKS, FEET ]
     hideList: [ POCKET, IDCARD ]
+  - type: AddAccentClothing
+    accent: BarkAccent
 
 - type: entity
   parent: ClothingOuterBase
@@ -314,6 +327,9 @@
   - type: SlotBlock
     blockList: [ UNDERWEAR, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING, SOCKS, FEET ]
     hideList: [ POCKET, IDCARD ]
+  - type: HideLayerClothing
+    slots:
+    - Tail
 
 - type: entity
   parent: ClothingOuterSuitCarp
