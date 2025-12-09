@@ -220,10 +220,11 @@
   - MofficTranslator
   - ElvishTranslator
   - DwarvenTranslator
-  - ShadokinTranslator
+  - MarTranslator
   - ValyrianStandardTranslator
   - EvePishtuTranslator
   - CarshnilTranslator
+  - WawaTranslator
   position: 7,6
 
 - type: technology
@@ -277,10 +278,11 @@
   - MofficTranslatorImplanter
   - ElvishStandardTranslatorImplanter
   - DwarvenStandardTranslatorImplanter
-  - ShadokinStandardTranslatorImplanter
+  - MarStandardTranslatorImplanter
   - ValyrianStandardTranslatorImplanter
   - CarshnilTranslatorImplanter
   - EvePishtuTranslatorImplanter
+  - WawaStandardTranslatorImplanter
   technologyPrerequisites:
   - TranslationImplanter
   - TranslationDeviceAdvanced

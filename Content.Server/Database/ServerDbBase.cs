@@ -276,6 +276,21 @@ namespace Content.Server.Database
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
+                // Orion-Start
+                profile.OOCFlavorText,
+                profile.CharacterFlavorText,
+                profile.GreenFlavorText,
+                profile.YellowFlavorText,
+                profile.RedFlavorText,
+                profile.TagsFlavorText,
+                profile.LinksFlavorText,
+                profile.NSFWFlavorText,
+                // Orion-End
+                // Erida start
+                profile.NSFWOOCFlavorText,
+                profile.NSFWLinksFlavorText,
+                profile.NSFWTagsFlavorText,
+                // Erida end
                 profile.Species,
                 voice, // Corvax-TTS
                 profile.Age,
@@ -313,6 +328,21 @@ namespace Content.Server.Database
 
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
+            // Orion-Start
+            profile.OOCFlavorText = humanoid.OOCFlavorText;
+            profile.CharacterFlavorText = humanoid.CharacterFlavorText;
+            profile.GreenFlavorText = humanoid.GreenFlavorText;
+            profile.YellowFlavorText = humanoid.YellowFlavorText;
+            profile.RedFlavorText = humanoid.RedFlavorText;
+            profile.TagsFlavorText = humanoid.TagsFlavorText;
+            profile.LinksFlavorText = humanoid.LinksFlavorText;
+            profile.NSFWFlavorText = humanoid.NSFWFlavorText;
+            // Orion-End
+            // Erida start
+            profile.NSFWLinksFlavorText = humanoid.NSFWLinksFlavorText;
+            profile.NSFWOOCFlavorText = humanoid.NSFWOOCFlavorText;
+            profile.NSFWTagsFlavorText = humanoid.NSFWTagsFlavorText;
+            // Erida end
             profile.Species = humanoid.Species;
             profile.Voice = humanoid.Voice; // Corvax-TTS
             profile.Age = humanoid.Age;
@@ -1122,7 +1152,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                     players[i] = log.Players[i].PlayerUserId;
                 }
 
-                yield return new SharedAdminLog(log.Id, log.Type, log.Impact, log.Date, log.Message, players);
+                yield return new SharedAdminLog(log.Id, log.Type, log.Impact, log.Date, log.CurTime, log.Message, players);
             }
         }
 
@@ -1433,7 +1463,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 ban.LastEditedAt,
                 ban.ExpirationTime,
                 ban.Hidden,
-                new [] { ban.RoleId.Replace(BanManager.JobPrefix, null) },
+                new [] { ban.RoleId.Replace(BanManager.PrefixJob, null).Replace(BanManager.PrefixAntag, null) },
                 MakePlayerRecord(unbanningAdmin),
                 ban.Unban?.UnbanTime);
         }
@@ -1733,7 +1763,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                     NormalizeDatabaseTime(firstBan.LastEditedAt),
                     NormalizeDatabaseTime(firstBan.ExpirationTime),
                     firstBan.Hidden,
-                    banGroup.Select(ban => ban.RoleId.Replace(BanManager.JobPrefix, null)).ToArray(),
+                    banGroup.Select(ban => ban.RoleId.Replace(BanManager.PrefixJob, null).Replace(BanManager.PrefixAntag, null)).ToArray(),
                     MakePlayerRecord(unbanningAdmin),
                     NormalizeDatabaseTime(firstBan.Unban?.UnbanTime)));
             }

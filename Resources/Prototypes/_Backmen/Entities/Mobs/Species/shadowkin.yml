@@ -5,6 +5,7 @@
   name: Urist McFloof
   abstract: true
   components:
+  - type: OnGhostAttemptDamage # kills with bloodloss instead of Asphyxiation
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -15,10 +16,10 @@
   - type: LanguageKnowledge #backmen: languages
     speaks:
     - TauCetiBasic
-    - Shadokin
+    - Mar
     understands:
     - TauCetiBasic
-    - Shadokin
+    - Mar
   - type: HumanoidAppearance
     eyeColor: '#ffffff'
     species: Shadowkin
@@ -30,8 +31,11 @@
   - type: Body
     prototype: Shadowkin
     requiredLegs: 2
+  - type: Puller
+    needsHands: false
   - type: Speech
-    allowedEmotes: ['Thump', 'Purse', 'Wurble']
+    speechSounds: Shadowkin
+    allowedEmotes: ['Thump', 'Purse', 'Wurble', 'ShadowkinGrowl']
   - type: BodyEmotes
     soundsId: ShadowkinBodyEmotes
   - type: Vocal
@@ -51,7 +55,10 @@
       types:
         Blunt: 1 # per second, scales with pressure and other constants.
   - type: Bloodstream
-    bloodReagent: ShadowkinBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: ShadowkinBlood
+        Quantity: 1
     bloodlossDamage:
       types:
         Bloodloss:
@@ -102,8 +109,6 @@
         Slash: 3
         Piercing: 1
   - type: InteractionPopup
-    successChance: 0.75
-    interactFailureString: petting-failure-generic
     interactSuccessString: petting-success-soft-floofy
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others

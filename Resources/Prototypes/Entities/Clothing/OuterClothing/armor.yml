@@ -33,6 +33,8 @@
     tags:
     - CorgiWearable
     - WhitelistChameleon
+  - type: StaminaResistance # Erida
+    damageCoefficient: 0.9
 
 #Alternate / slim basic armor vest
 - type: entity
@@ -46,6 +48,8 @@
     sprite: Clothing/OuterClothing/Armor/security_slim.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Armor/security_slim.rsi
+  - type: StaminaResistance # Erida
+    damageCoefficient: 1
 
 - type: entity
   parent: ClothingOuterArmorBase
@@ -122,6 +126,9 @@
     sprintModifier: 1.0
   - type: HeldSpeedModifier
   - type: GroupExamine
+  - type: SlotBlock
+    blockList: [ UNDERSHIRT ]
+    hideList: [ IDCARD ]
 
 - type: entity
   parent: [ClothingOuterArmorBaseCarapace, BaseCommandContraband]
@@ -296,11 +303,10 @@
         startValue: 0.1
         endValue: 2.0
         isLooped: true
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 600
     startingCharge: 600
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
   - type: Item
     size: Normal
@@ -505,8 +511,6 @@
     modifiers:
       coefficients:
         Blunt: 0.9
-  - type: StaminaResistance
-    damageCoefficient: 0.90
   - type: Construction
     graph: cardArmour
     node: cardarmour

@@ -37,6 +37,7 @@
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
   - PrinterDocMachineCircuitboard # DS-14
+  - SmartFridgeCircuitboard
 
 - type: latheRecipePack
   id: Botany

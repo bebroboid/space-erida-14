@@ -402,6 +402,21 @@ namespace Content.Server.Database
         public int Slot { get; set; }
         [Column("char_name")] public string CharacterName { get; set; } = null!;
         public string FlavorText { get; set; } = null!;
+        // Orion-Start
+        public string OOCFlavorText { get; set; } = null!;
+        public string CharacterFlavorText { get; set; } = null!;
+        public string GreenFlavorText { get; set; } = null!;
+        public string YellowFlavorText { get; set; } = null!;
+        public string RedFlavorText { get; set; } = null!;
+        public string TagsFlavorText { get; set; } = null!;
+        public string LinksFlavorText { get; set; } = null!;
+        public string NSFWFlavorText { get; set; } = null!;
+        // Orion-End
+        // Erida start
+        public string NSFWOOCFlavorText { get; set; } = null!;
+        public string NSFWLinksFlavorText { get; set; } = null!;
+        public string NSFWTagsFlavorText { get; set; } = null!;
+        // Erida end
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;
@@ -705,6 +720,11 @@ namespace Content.Server.Database
         [Required] public LogImpact Impact { get; set; }
 
         [Required] public DateTime Date { get; set; }
+
+        /// <summary>
+        /// The current time in the round in ticks since the start of the round.
+        /// </summary>
+        public long CurTime { get; set; }
 
         [Required] public string Message { get; set; } = default!;
 
